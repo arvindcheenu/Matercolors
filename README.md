@@ -1,37 +1,30 @@
-# NPM Module Boilerplate
+# MaterColor
 
-[![Build Status](https://travis-ci.org/flexdinesh/npm-module-boilerplate.svg?branch=master)](https://travis-ci.org/flexdinesh/npm-module-boilerplate) [![dependencies Status](https://david-dm.org/flexdinesh/npm-module-boilerplate/status.svg)](https://david-dm.org/flexdinesh/npm-module-boilerplate) [![devDependencies Status](https://david-dm.org/flexdinesh/npm-module-boilerplate/dev-status.svg)](https://david-dm.org/flexdinesh/npm-module-boilerplate?type=dev) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+A tiny, zero-dependency libary for building harmonious material palettes for any color. This library is reverse-engineered from Google's Official Inline Color Tool.
 
-**Start developing your NPM module in seconds** ✨
+## The Need
 
-Readymade boilerplate setup with all the best practices to kick start your npm/node module development.
+While tools exist for generating material palettes such as mbitson's mcg, the colors are approximated based on the Old Material Color System introduced around 2014. While edelstone reverse-engineered the tool helped save a lot of time in understanding the core functionality, the generated palettes could only be accessed through the interface, much like the original tool. Hence the need for a library that tries to offer the same, and more.
 
-Happy hacking =)
+## Roadmap
 
-# Features
+### Version 1.0.0 (current)
 
-* **ES6/ESNext** - Write _ES6_ code and _Babel_ will transpile it to ES5 for backwards compatibility
-* **Test** - _Mocha_ with _Istanbul_ coverage
-* **Lint** - Preconfigured _ESlint_ with _Airbnb_ config
-* **CI** - _TravisCI_ configuration setup
-* **Minify** - Built code will be minified for performance
+- [x] Generate Primary Palette for any given color
+- [x] Generate Accents for Palette
+- [x] Get Contrast Colors for Foreground Text
 
-# Commands
-- `npm run clean` - Remove `lib/` directory
-- `npm test` - Run tests with linting and coverage results.
-- `npm test:only` - Run tests without linting or coverage.
-- `npm test:watch` - You can even re-run tests on file changes!
-- `npm test:prod` - Run tests with minified code.
-- `npm run test:examples` - Test written examples on pure JS for better understanding module usage.
-- `npm run lint` - Run ESlint with airbnb-config
-- `npm run cover` - Get coverage report for your code.
-- `npm run build` - Babel will transpile ES6 => ES5 and minify the code.
-- `npm run prepublish` - Hook for npm. Do all the checks before publishing your module.
+### Version 1.1.0 (next)
 
-# Installation
-Just clone this repo and remove `.git` folder.
+- [ ] Generate Complementary Palette
+- [ ] Generate Analogous Palette
+- [ ] Generate Triadic Palette
 
+### Version 2,0.0 (future)
 
-# License
+- [ ] Generate CSS Classes
+- [ ] ...more coming soon...
 
-MIT © Dinesh Pandiyan
+## License
+
+The MIT License (MIT). Copyright (c) 2020 Arvind Srinivasan <arvind@cheenu.net>
