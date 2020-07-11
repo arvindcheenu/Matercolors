@@ -1,8 +1,8 @@
-![Matercolor](images/logo.png)
+<img width=400 src="images/logo.png"/>
 
-A tiny, zero-dependency libary for building harmonious material palettes for any color. 
+A tiny, **zero-dependency** libary for building harmonious material palettes for **any color**.
 
-[Developed by **Arvind Srinivasan.**](https://github.com/arvindcheenu)
+[Created with ❤️ by **Arvind Srinivasan.**](https://github.com/arvindcheenu)
 
 ## 🎉 Installation
 
