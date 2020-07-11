@@ -1,10 +1,11 @@
 {
-  "name": "matercolor",
+  "name": "@arvindcheenu/matercolor",
   "version": "1.0.0",
   "description": "A tiny, zero-dependency libary for building harmonious material palettes for any color.",
   "main": "./lib/index.js",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/@arvindcheenu"
   },
   "scripts": {
     "clean": "rimraf lib",
