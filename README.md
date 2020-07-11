@@ -4,17 +4,18 @@ A tiny, **zero-dependency** libary for building harmonious material palettes for
 
 [Created with ❤️ by **Arvind Srinivasan.**](https://github.com/arvindcheenu)
 
-## 🎉 Installation
+## 📦 Installation
 
 Use the package manager [npm](https://www.npmjs.com/) to install `@arvindcheenu/matercolor` from commandline.
 
 ```bash
-npm i @arvindcheenu/matercolor@1.0.0
+npm i matercolor
 ```
 Alternatively, you can update your `package.json` as:
 ```bash
-"@arvindcheenu/matercolor": "1.0.0"
+"matercolor": "1.0.0"
 ```
+> ### 🎉 Great! You're ready to go!
 
 ## 🚸 Usage
 ### 🎨 Palette Constructor
