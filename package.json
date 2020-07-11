@@ -6,7 +6,7 @@
   "type": "module",
   "publishConfig": {
     "access": "public",
-    "registry": "https://npm.pkg.github.com/@arvindcheenu"
+    "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
     "clean": "rimraf lib",
