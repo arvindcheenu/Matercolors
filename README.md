@@ -1,4 +1,4 @@
-<img width=400 src="https://raw.githubusercontent.com/arvindcheenu/Matercolor/master/images/logo.png?token=ADKHWXNINCWYXFWDJNS3ON27BG7V6"/>
+![Matercolors](images/logo.png)
 
 A tiny, **zero-dependency** libary for building harmonious material palettes for **any color**.
 
@@ -6,15 +6,16 @@ A tiny, **zero-dependency** libary for building harmonious material palettes for
 
 ## 🎉 Installation
 
-Use the package manager [npm](https://www.npmjs.com/) to install `@arvindcheenu/matercolor` from commandline.
+Use the package manager [npm](https://www.npmjs.com/) to install `matercolors` from commandline.
 
 ```bash
-npm i @arvindcheenu/matercolor@1.0.0
+npm i matercolors
 ```
 Alternatively, you can update your `package.json` as:
 ```bash
-"@arvindcheenu/matercolor": "1.0.0"
+"matercolors": "1.0.0"
 ```
+> ...aand thats it! Now lets' dive right in!
 
 ## 🚸 Usage
 ### 🎨 Palette Constructor
@@ -181,7 +182,8 @@ These outputs can also be used in conjunction with [Material UI's](https://mater
  - [ ] Generate Triadic Palette
 
 #### The Future
-- [ ] Coming soon...
+
+ - [ ] Coming soon
  
 ### 👐 Contributing 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. Please make sure to create or update tests as appropriate.

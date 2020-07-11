@@ -1,7 +1,7 @@
 {
-  "name": "matercolor",
+  "name": "matercolors",
   "version": "1.0.0",
-  "description": "A tiny, zero-dependency libary for building harmonious material palettes for any color.",
+  "description": "A tiny, uni-dependent libary for building harmonious material palettes for any color.",
   "main": "./lib/index.js",
   "type": "module",
   "scripts": {
@@ -23,7 +23,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arvindcheenu/Matercolor.git"
+    "url": "git+https://github.com/arvindcheenu/Matercolors.git"
   },
   "keywords": [
     "npm",
@@ -36,9 +36,9 @@
   "author": "Arvind Srinivasan <arvind@cheenu.net>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/arvindcheenu/Matercolor/issues"
+    "url": "https://github.com/arvindcheenu/Matercolors/issues"
   },
-  "homepage": "https://github.com/arvindcheenu/Matercolor#readme",
+  "homepage": "https://github.com/arvindcheenu/Matercolors#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^10.0.1",
