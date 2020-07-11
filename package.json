@@ -1,5 +1,5 @@
 {
-  "name": "@arvindcheenu/matercolor",
+  "name": "matercolor",
   "version": "1.0.0",
   "description": "A tiny, zero-dependency libary for building harmonious material palettes for any color.",
   "main": "./lib/index.js",
