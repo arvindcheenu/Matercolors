@@ -1,5 +1,6 @@
-import { normalizeRGB, hexToRgba } from "./conversion.utils";
-import { Y, Ed } from "./goldenPalettes.utils";
+import { normalizeRGB, hexToRgba } from './color.utils';
+import { Y, Ed } from './goldenPalettes.utils';
+
 export const Kd = [
   [
     new Y(94.67497003305085, 7.266715066863771, 1.000743882272359),
@@ -232,100 +233,100 @@ export const Kd = [
 ];
 export const KdA = [
   [
-    new Ed(normalizeRGB(hexToRgba("#FF8A80"))),
-    new Ed(normalizeRGB(hexToRgba("#FF5252"))),
-    new Ed(normalizeRGB(hexToRgba("#FF1744"))),
-    new Ed(normalizeRGB(hexToRgba("#D50000")))
+    new Ed(normalizeRGB(hexToRgba('#FF8A80'))),
+    new Ed(normalizeRGB(hexToRgba('#FF5252'))),
+    new Ed(normalizeRGB(hexToRgba('#FF1744'))),
+    new Ed(normalizeRGB(hexToRgba('#D50000')))
   ],
   [
-    new Ed(normalizeRGB(hexToRgba("#FF80AB"))),
-    new Ed(normalizeRGB(hexToRgba("#FF4081"))),
-    new Ed(normalizeRGB(hexToRgba("#F50057"))),
-    new Ed(normalizeRGB(hexToRgba("#C51162")))
+    new Ed(normalizeRGB(hexToRgba('#FF80AB'))),
+    new Ed(normalizeRGB(hexToRgba('#FF4081'))),
+    new Ed(normalizeRGB(hexToRgba('#F50057'))),
+    new Ed(normalizeRGB(hexToRgba('#C51162')))
   ],
   [
-    new Ed(normalizeRGB(hexToRgba("#EA80FC"))),
-    new Ed(normalizeRGB(hexToRgba("#E040FB"))),
-    new Ed(normalizeRGB(hexToRgba("#D500F9"))),
-    new Ed(normalizeRGB(hexToRgba("#AA00FF")))
+    new Ed(normalizeRGB(hexToRgba('#EA80FC'))),
+    new Ed(normalizeRGB(hexToRgba('#E040FB'))),
+    new Ed(normalizeRGB(hexToRgba('#D500F9'))),
+    new Ed(normalizeRGB(hexToRgba('#AA00FF')))
   ],
   [
-    new Ed(normalizeRGB(hexToRgba("#B388FF"))),
-    new Ed(normalizeRGB(hexToRgba("#7C4DFF"))),
-    new Ed(normalizeRGB(hexToRgba("#651FFF"))),
-    new Ed(normalizeRGB(hexToRgba("#6200EA")))
+    new Ed(normalizeRGB(hexToRgba('#B388FF'))),
+    new Ed(normalizeRGB(hexToRgba('#7C4DFF'))),
+    new Ed(normalizeRGB(hexToRgba('#651FFF'))),
+    new Ed(normalizeRGB(hexToRgba('#6200EA')))
   ],
   [
-    new Ed(normalizeRGB(hexToRgba("#8C9EFF"))),
-    new Ed(normalizeRGB(hexToRgba("#536DFE"))),
-    new Ed(normalizeRGB(hexToRgba("#3D5AFE"))),
-    new Ed(normalizeRGB(hexToRgba("#304FFE")))
+    new Ed(normalizeRGB(hexToRgba('#8C9EFF'))),
+    new Ed(normalizeRGB(hexToRgba('#536DFE'))),
+    new Ed(normalizeRGB(hexToRgba('#3D5AFE'))),
+    new Ed(normalizeRGB(hexToRgba('#304FFE')))
   ],
   [
-    new Ed(normalizeRGB(hexToRgba("#82B1FF"))),
-    new Ed(normalizeRGB(hexToRgba("#448AFF"))),
-    new Ed(normalizeRGB(hexToRgba("#2979FF"))),
-    new Ed(normalizeRGB(hexToRgba("#2962FF")))
+    new Ed(normalizeRGB(hexToRgba('#82B1FF'))),
+    new Ed(normalizeRGB(hexToRgba('#448AFF'))),
+    new Ed(normalizeRGB(hexToRgba('#2979FF'))),
+    new Ed(normalizeRGB(hexToRgba('#2962FF')))
   ],
   [
-    new Ed(normalizeRGB(hexToRgba("#80D8FF"))),
-    new Ed(normalizeRGB(hexToRgba("#40C4FF"))),
-    new Ed(normalizeRGB(hexToRgba("#00B0FF"))),
-    new Ed(normalizeRGB(hexToRgba("#0091EA")))
+    new Ed(normalizeRGB(hexToRgba('#80D8FF'))),
+    new Ed(normalizeRGB(hexToRgba('#40C4FF'))),
+    new Ed(normalizeRGB(hexToRgba('#00B0FF'))),
+    new Ed(normalizeRGB(hexToRgba('#0091EA')))
   ],
   [
-    new Ed(normalizeRGB(hexToRgba("#84FFFF"))),
-    new Ed(normalizeRGB(hexToRgba("#18FFFF"))),
-    new Ed(normalizeRGB(hexToRgba("#00E5FF"))),
-    new Ed(normalizeRGB(hexToRgba("#00B8D4")))
+    new Ed(normalizeRGB(hexToRgba('#84FFFF'))),
+    new Ed(normalizeRGB(hexToRgba('#18FFFF'))),
+    new Ed(normalizeRGB(hexToRgba('#00E5FF'))),
+    new Ed(normalizeRGB(hexToRgba('#00B8D4')))
   ],
   [
-    new Ed(normalizeRGB(hexToRgba("#A7FFEB"))),
-    new Ed(normalizeRGB(hexToRgba("#64FFDA"))),
-    new Ed(normalizeRGB(hexToRgba("#1DE9B6"))),
-    new Ed(normalizeRGB(hexToRgba("#00BFA5")))
+    new Ed(normalizeRGB(hexToRgba('#A7FFEB'))),
+    new Ed(normalizeRGB(hexToRgba('#64FFDA'))),
+    new Ed(normalizeRGB(hexToRgba('#1DE9B6'))),
+    new Ed(normalizeRGB(hexToRgba('#00BFA5')))
   ],
   [
-    new Ed(normalizeRGB(hexToRgba("#B9F6CA"))),
-    new Ed(normalizeRGB(hexToRgba("#69F0AE"))),
-    new Ed(normalizeRGB(hexToRgba("#00E676"))),
-    new Ed(normalizeRGB(hexToRgba("#00C853")))
+    new Ed(normalizeRGB(hexToRgba('#B9F6CA'))),
+    new Ed(normalizeRGB(hexToRgba('#69F0AE'))),
+    new Ed(normalizeRGB(hexToRgba('#00E676'))),
+    new Ed(normalizeRGB(hexToRgba('#00C853')))
   ],
   [
-    new Ed(normalizeRGB(hexToRgba("#CCFF90"))),
-    new Ed(normalizeRGB(hexToRgba("#B2FF59"))),
-    new Ed(normalizeRGB(hexToRgba("#76FF03"))),
-    new Ed(normalizeRGB(hexToRgba("#64DD17")))
+    new Ed(normalizeRGB(hexToRgba('#CCFF90'))),
+    new Ed(normalizeRGB(hexToRgba('#B2FF59'))),
+    new Ed(normalizeRGB(hexToRgba('#76FF03'))),
+    new Ed(normalizeRGB(hexToRgba('#64DD17')))
   ],
   [
-    new Ed(normalizeRGB(hexToRgba("#F4FF81"))),
-    new Ed(normalizeRGB(hexToRgba("#EEFF41"))),
-    new Ed(normalizeRGB(hexToRgba("#C6FF00"))),
-    new Ed(normalizeRGB(hexToRgba("#AEEA00")))
+    new Ed(normalizeRGB(hexToRgba('#F4FF81'))),
+    new Ed(normalizeRGB(hexToRgba('#EEFF41'))),
+    new Ed(normalizeRGB(hexToRgba('#C6FF00'))),
+    new Ed(normalizeRGB(hexToRgba('#AEEA00')))
   ],
   [
-    new Ed(normalizeRGB(hexToRgba("#FFFF8D"))),
-    new Ed(normalizeRGB(hexToRgba("#FFFF00"))),
-    new Ed(normalizeRGB(hexToRgba("#FFEA00"))),
-    new Ed(normalizeRGB(hexToRgba("#FFD600")))
+    new Ed(normalizeRGB(hexToRgba('#FFFF8D'))),
+    new Ed(normalizeRGB(hexToRgba('#FFFF00'))),
+    new Ed(normalizeRGB(hexToRgba('#FFEA00'))),
+    new Ed(normalizeRGB(hexToRgba('#FFD600')))
   ],
   [
-    new Ed(normalizeRGB(hexToRgba("#FFE57F"))),
-    new Ed(normalizeRGB(hexToRgba("#FFD740"))),
-    new Ed(normalizeRGB(hexToRgba("#FFC400"))),
-    new Ed(normalizeRGB(hexToRgba("#FFAB00")))
+    new Ed(normalizeRGB(hexToRgba('#FFE57F'))),
+    new Ed(normalizeRGB(hexToRgba('#FFD740'))),
+    new Ed(normalizeRGB(hexToRgba('#FFC400'))),
+    new Ed(normalizeRGB(hexToRgba('#FFAB00')))
   ],
   [
-    new Ed(normalizeRGB(hexToRgba("#FFD180"))),
-    new Ed(normalizeRGB(hexToRgba("#FFAB40"))),
-    new Ed(normalizeRGB(hexToRgba("#FF9100"))),
-    new Ed(normalizeRGB(hexToRgba("#FF6D00")))
+    new Ed(normalizeRGB(hexToRgba('#FFD180'))),
+    new Ed(normalizeRGB(hexToRgba('#FFAB40'))),
+    new Ed(normalizeRGB(hexToRgba('#FF9100'))),
+    new Ed(normalizeRGB(hexToRgba('#FF6D00')))
   ],
   [
-    new Ed(normalizeRGB(hexToRgba("#FF9E80"))),
-    new Ed(normalizeRGB(hexToRgba("#FF6E40"))),
-    new Ed(normalizeRGB(hexToRgba("#FF3D00"))),
-    new Ed(normalizeRGB(hexToRgba("#DD2C00")))
+    new Ed(normalizeRGB(hexToRgba('#FF9E80'))),
+    new Ed(normalizeRGB(hexToRgba('#FF6E40'))),
+    new Ed(normalizeRGB(hexToRgba('#FF3D00'))),
+    new Ed(normalizeRGB(hexToRgba('#DD2C00')))
   ]
 ];
 export const Ld = [
