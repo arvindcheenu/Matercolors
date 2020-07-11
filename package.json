@@ -4,10 +4,6 @@
   "description": "A tiny, zero-dependency libary for building harmonious material palettes for any color.",
   "main": "./lib/index.js",
   "type": "module",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
-  },
   "scripts": {
     "clean": "rimraf lib",
     "test": "npm run lint && npm run cover",
