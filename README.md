@@ -1,4 +1,4 @@
-<img width=400 src="https://raw.githubusercontent.com/arvindcheenu/Matercolor/master/images/logo.png?token=ADKHWXNINCWYXFWDJNS3ON27BG7V6"/>
+<img width=400 src="images/logo.png"/>
 
 A tiny, **zero-dependency** libary for building harmonious material palettes for **any color**.
 
