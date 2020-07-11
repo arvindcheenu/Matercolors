@@ -15,7 +15,7 @@ Alternatively, you can update your `package.json` as:
 ```bash
 "matercolor": "1.0.0"
 ```
-> ### 🎉 Great! You're ready to go!
+> 🎉 Great! You're ready to go!
 
 ## 🚸 Usage
 ### 🎨 Palette Constructor
