@@ -1,4 +1,4 @@
-<img width=400 src="images/logo.png"/>
+<img width=400 src="https://raw.githubusercontent.com/arvindcheenu/Matercolor/master/images/logo.png?token=ADKHWXJ4M5WSXCV5DBWQGMS7BG67I"/>
 
 A tiny, **zero-dependency** libary for building harmonious material palettes for **any color**.
 
@@ -6,10 +6,14 @@ A tiny, **zero-dependency** libary for building harmonious material palettes for
 
 ## 🎉 Installation
 
-Use the package manager [npm](https://www.npmjs.com/) to install `matercolor`.
+Use the package manager [npm](https://www.npmjs.com/) to install `@arvindcheenu/matercolor` from commandline.
 
 ```bash
-npm i matercolor
+npm i @arvindcheenu/matercolor@1.0.0
+```
+Alternatively, you can update your `package.json` as:
+```bash
+"@arvindcheenu/matercolor": "1.0.0"
 ```
 
 ## 🚸 Usage
