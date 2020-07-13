@@ -1,8 +1,15 @@
-![Matercolors](images/logo.png)
-
-A tiny, **zero-dependency** libary for building harmonious material palettes for **any color**.
-
-[Created with ❤️ by **Arvind Srinivasan.**](https://github.com/arvindcheenu)
+<p align="center">
+   <a href="https://viewer.tetr8labs.net">
+     <img width="100" src="images/logo.png" alt="Tetrate">
+   </a>
+   <h1 align="center">Matercolor</h1>
+</p>
+<p align="center">
+  A tiny, <b>zero-dependency</b> libary for building harmonious material palettes for <b>any color</b>.
+</p>
+<p align="center">
+<a href="https://github.com/arvindcheenu">Created with ❤️ by <b>Arvind Srinivasan.<b></a>
+</p>
 
 ## 🎉 Installation
 
