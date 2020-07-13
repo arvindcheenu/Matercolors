@@ -1,7 +1,10 @@
-import { normalizeRGB, hexToRgba } from './color.utils';
-import { Y, Ed } from './goldenPalettes.utils';
-
-export const Kd = [
+/* eslint-disable no-nested-ternary */
+import { normalizeRGB, hexToRgba } from './color.utils.js';
+import {
+  U, L, Y, Ed, Fd, Gd, Hd, Id, Jd
+} from './goldenPalettes.utils.js';
+// Local Constants
+const Kd = [
   [
     new Y(94.67497003305085, 7.266715066863771, 1.000743882272359),
     new Y(86.7897416761699, 18.370736761658012, 4.23637133971424),
@@ -12,7 +15,7 @@ export const Kd = [
     new Y(51.66348502954747, 64.7487785020625, 43.244876694855286),
     new Y(47.09455666350969, 62.29836039074277, 40.67775424698388),
     new Y(43.77122063388739, 60.28633509183384, 40.31444686692952),
-    new Y(39.555187078007386, 58.703681355389975, 41.66495027798629)
+    new Y(39.555187078007386, 58.703681355389975, 41.66495027798629),
   ],
   [
     new Y(92.68053776327665, 9.515385232804263, -0.8994072969754852),
@@ -24,7 +27,7 @@ export const Kd = [
     new Y(47.27738650144558, 70.77855776427805, 11.70434273264508),
     new Y(42.58424189486517, 65.5411953138309, 7.595596439803797),
     new Y(37.977492407254836, 60.74362621842075, 2.9847124951453474),
-    new Y(29.699290034849604, 51.90485023721311, -4.830186634107636)
+    new Y(29.699290034849604, 51.90485023721311, -4.830186634107636),
   ],
   [
     new Y(92.4362655169016, 7.542927467702299, -6.039842848605881),
@@ -36,7 +39,7 @@ export const Kd = [
     new Y(37.690702208992185, 61.13762767732481, -49.384803274243026),
     new Y(33.56291870731981, 57.637381239254104, -51.39557249855828),
     new Y(29.865391314234515, 54.29737439901333, -52.6601973712463),
-    new Y(23.16724235420436, 48.51764437280498, -55.16267949015293)
+    new Y(23.16724235420436, 48.51764437280498, -55.16267949015293),
   ],
   [
     new Y(92.49103426017201, 4.712320025752947, -6.532868071709763),
@@ -48,7 +51,7 @@ export const Kd = [
     new Y(34.189791237562616, 46.60426065139123, -59.53961627676729),
     new Y(30.52713367338361, 46.01498224754519, -60.19975052509064),
     new Y(27.44585524877222, 44.96180431854785, -60.46395810756433),
-    new Y(21.98627670328218, 44.29296076245473, -60.93653655172098)
+    new Y(21.98627670328218, 44.29296076245473, -60.93653655172098),
   ],
   [
     new Y(92.86314411983918, 1.5318147061061937, -6.025243528950552),
@@ -60,7 +63,7 @@ export const Kd = [
     new Y(35.15116453901552, 26.231812080381168, -54.53700978785404),
     new Y(31.080429988007957, 27.07394930110124, -53.97505274579958),
     new Y(27.026672080454922, 28.165266427558983, -53.28987325482218),
-    new Y(19.751201587921678, 30.60784576895101, -52.13866519297474)
+    new Y(19.751201587921678, 30.60784576895101, -52.13866519297474),
   ],
   [
     new Y(94.70682457348717, -2.835484735987326, -6.978044694792707),
@@ -72,7 +75,7 @@ export const Kd = [
     new Y(55.62267676922188, 4.998684384486918, -55.02164729429915),
     new Y(49.27006645904875, 8.470398370314381, -54.494796838457546),
     new Y(43.16828856394358, 11.968483076143844, -53.972567377977974),
-    new Y(32.17757793894193, 18.96054990229354, -53.45146365049088)
+    new Y(32.17757793894193, 18.96054990229354, -53.45146365049088),
   ],
   [
     new Y(95.35713467762652, -4.797149155388203, -6.550002550504308),
@@ -84,7 +87,7 @@ export const Kd = [
     new Y(60.88357994308973, -7.252819027184943, -46.67753731595634),
     new Y(54.26166495426166, -3.8141836897908066, -45.97939475762498),
     new Y(48.10661895072673, -1.378998784464347, -44.34466750206778),
-    new Y(36.34401147057282, 5.067812404713545, -43.11786257561915)
+    new Y(36.34401147057282, 5.067812404713545, -43.11786257561915),
   ],
   [
     new Y(95.69295154599753, -6.898716127301141, -3.994284229654421),
@@ -96,7 +99,7 @@ export const Kd = [
     new Y(64.44491716553777, -29.08337434584457, -21.154935769156214),
     new Y(56.99816432961103, -27.31081477279451, -17.86988815767443),
     new Y(49.75464182255671, -25.335383503694242, -15.024722591662787),
-    new Y(36.52725894264432, -22.129641744194515, -9.176159146894303)
+    new Y(36.52725894264432, -22.129641744194515, -9.176159146894303),
   ],
   [
     new Y(94.18453941589918, -6.08351703428972, -1.5488916051161983),
@@ -108,7 +111,7 @@ export const Kd = [
     new Y(51.059149495197715, -34.65019160301408, -1.3910484300432513),
     new Y(45.269081019218405, -32.13244775422941, -0.4526371852697775),
     new Y(39.36899076059384, -29.25264468583161, -0.03562564673170732),
-    new Y(28.58363043701477, -24.585465516136413, 1.8037402162492389)
+    new Y(28.58363043701477, -24.585465516136413, 1.8037402162492389),
   ],
   [
     new Y(95.30530183565223, -6.430415645739263, 4.292950594459599),
@@ -120,7 +123,7 @@ export const Kd = [
     new Y(58.777960853461366, -46.1153692478013, 37.838910745225576),
     new Y(52.41108688974904, -43.21761792485762, 35.62250659009424),
     new Y(46.2813873076426, -40.25816227675361, 33.32343229338761),
-    new Y(34.685655305814514, -34.75343878510312, 28.866739034359767)
+    new Y(34.685655305814514, -34.75343878510312, 28.866739034359767),
   ],
   [
     new Y(96.70518169355954, -4.929987845095463, 6.397084523168894),
@@ -132,7 +135,7 @@ export const Kd = [
     new Y(67.21532310272079, -36.56304870773486, 50.49629051268894),
     new Y(59.91051142210195, -35.77011466063357, 46.56465847976187),
     new Y(52.51015841084511, -34.47903440699235, 42.20723868724268),
-    new Y(39.41191983353878, -32.80460974352642, 35.255490585630014)
+    new Y(39.41191983353878, -32.80460974352642, 35.255490585630014),
   ],
   [
     new Y(97.99506057883428, -4.059632482741494, 9.355797602381521),
@@ -144,7 +147,7 @@ export const Kd = [
     new Y(78.27915100603997, -21.181850056402496, 68.82763412297965),
     new Y(70.82385811892824, -17.788148932525672, 64.00327817988128),
     new Y(62.936867012868035, -13.697412111684903, 58.513000509287835),
-    new Y(49.498610881452535, -6.485230564384715, 49.67432722833751)
+    new Y(49.498610881452535, -6.485230564384715, 49.67432722833751),
   ],
   [
     new Y(98.93885129752759, -3.0098470288543178, 10.765736833790008),
@@ -156,7 +159,7 @@ export const Kd = [
     new Y(87.12188349168609, -2.3764300099239355, 78.14868195373407),
     new Y(80.96200442419905, 8.849333792729064, 75.05050700092679),
     new Y(75.00342770718086, 20.340173566879283, 72.24841925958934),
-    new Y(65.48207757431567, 39.647064970476094, 68.34872841768654)
+    new Y(65.48207757431567, 39.647064970476094, 68.34872841768654),
   ],
   [
     new Y(97.5642392074337, -1.445525639405032, 11.881254316297674),
@@ -168,7 +171,7 @@ export const Kd = [
     new Y(78.17240973804697, 16.628512886531887, 81.09358318806208),
     new Y(73.80899654381052, 26.53614315250874, 78.21754052181723),
     new Y(70.1134511665764, 35.3007623359744, 75.87510992138593),
-    new Y(63.86460405565717, 50.94648214505959, 72.17815682124423)
+    new Y(63.86460405565717, 50.94648214505959, 72.17815682124423),
   ],
   [
     new Y(96.30459517801387, 0.923151172282477, 10.598439446083074),
@@ -180,7 +183,7 @@ export const Kd = [
     new Y(68.94724338946975, 35.22014778433863, 74.88425044595111),
     new Y(64.83017495535229, 40.91200730099703, 71.9596053545428),
     new Y(60.8534207471871, 46.41483590510681, 69.18061963415211),
-    new Y(54.77571742962287, 55.282751019360035, 65.10193403547922)
+    new Y(54.77571742962287, 55.282751019360035, 65.10193403547922),
   ],
   [
     new Y(93.69219844671957, 5.763979334358293, 3.1700162796469034),
@@ -192,7 +195,7 @@ export const Kd = [
     new Y(57.28707915232363, 60.3250664308812, 60.07341536376447),
     new Y(53.810052616293845, 58.36760943780162, 58.19586806694884),
     new Y(50.301352405105874, 56.40104898089937, 55.924141992404344),
-    new Y(43.86477994548343, 52.970887703910726, 52.30067989225532)
+    new Y(43.86477994548343, 52.970887703910726, 52.30067989225532),
   ],
   [
     new Y(93.29864888069987, 0.9915456090475727, 1.442353076378411),
@@ -204,7 +207,7 @@ export const Kd = [
     new Y(35.600996682015754, 12.40352847757295, 12.10432183902449),
     new Y(30.084271265759952, 11.317148149878081, 10.547484304296217),
     new Y(24.555014696416578, 10.816613316782464, 8.506555306791984),
-    new Y(18.35055226514404, 10.225725550338765, 7.058582769882571)
+    new Y(18.35055226514404, 10.225725550338765, 7.058582769882571),
   ],
   [
     new Y(98.27202740980219, -1.6418393644634932e-5, 6.567357457853973e-6),
@@ -216,7 +219,7 @@ export const Kd = [
     new Y(49.238989620828065, -9.373417431124409e-6, 3.7493669724497636e-6),
     new Y(41.14266843804848, -8.210152946386273e-6, 3.2840611896567395e-6),
     new Y(27.974857206003705, -6.318226192236764e-6, 2.5272904768947058e-6),
-    new Y(12.740011331302725, -4.129311698131133e-6, 1.6517246792524531e-6)
+    new Y(12.740011331302725, -4.129311698131133e-6, 1.6517246792524531e-6),
   ],
   [
     new Y(94.27665212516236, -0.637571046109342, -1.313515378996688),
@@ -228,106 +231,106 @@ export const Kd = [
     new Y(44.85917867647632, -6.411990559239578, -9.74511982878765),
     new Y(36.92458930566504, -5.319878610845596, -8.341943474561553),
     new Y(29.115334784637618, -4.168907828645069, -6.8629962199973304),
-    new Y(19.958338450799914, -3.3116721453186617, -5.4486142104736786)
-  ]
+    new Y(19.958338450799914, -3.3116721453186617, -5.4486142104736786),
+  ],
 ];
 export const KdA = [
   [
     new Ed(normalizeRGB(hexToRgba('#FF8A80'))),
     new Ed(normalizeRGB(hexToRgba('#FF5252'))),
     new Ed(normalizeRGB(hexToRgba('#FF1744'))),
-    new Ed(normalizeRGB(hexToRgba('#D50000')))
+    new Ed(normalizeRGB(hexToRgba('#D50000'))),
   ],
   [
     new Ed(normalizeRGB(hexToRgba('#FF80AB'))),
     new Ed(normalizeRGB(hexToRgba('#FF4081'))),
     new Ed(normalizeRGB(hexToRgba('#F50057'))),
-    new Ed(normalizeRGB(hexToRgba('#C51162')))
+    new Ed(normalizeRGB(hexToRgba('#C51162'))),
   ],
   [
     new Ed(normalizeRGB(hexToRgba('#EA80FC'))),
     new Ed(normalizeRGB(hexToRgba('#E040FB'))),
     new Ed(normalizeRGB(hexToRgba('#D500F9'))),
-    new Ed(normalizeRGB(hexToRgba('#AA00FF')))
+    new Ed(normalizeRGB(hexToRgba('#AA00FF'))),
   ],
   [
     new Ed(normalizeRGB(hexToRgba('#B388FF'))),
     new Ed(normalizeRGB(hexToRgba('#7C4DFF'))),
     new Ed(normalizeRGB(hexToRgba('#651FFF'))),
-    new Ed(normalizeRGB(hexToRgba('#6200EA')))
+    new Ed(normalizeRGB(hexToRgba('#6200EA'))),
   ],
   [
     new Ed(normalizeRGB(hexToRgba('#8C9EFF'))),
     new Ed(normalizeRGB(hexToRgba('#536DFE'))),
     new Ed(normalizeRGB(hexToRgba('#3D5AFE'))),
-    new Ed(normalizeRGB(hexToRgba('#304FFE')))
+    new Ed(normalizeRGB(hexToRgba('#304FFE'))),
   ],
   [
     new Ed(normalizeRGB(hexToRgba('#82B1FF'))),
     new Ed(normalizeRGB(hexToRgba('#448AFF'))),
     new Ed(normalizeRGB(hexToRgba('#2979FF'))),
-    new Ed(normalizeRGB(hexToRgba('#2962FF')))
+    new Ed(normalizeRGB(hexToRgba('#2962FF'))),
   ],
   [
     new Ed(normalizeRGB(hexToRgba('#80D8FF'))),
     new Ed(normalizeRGB(hexToRgba('#40C4FF'))),
     new Ed(normalizeRGB(hexToRgba('#00B0FF'))),
-    new Ed(normalizeRGB(hexToRgba('#0091EA')))
+    new Ed(normalizeRGB(hexToRgba('#0091EA'))),
   ],
   [
     new Ed(normalizeRGB(hexToRgba('#84FFFF'))),
     new Ed(normalizeRGB(hexToRgba('#18FFFF'))),
     new Ed(normalizeRGB(hexToRgba('#00E5FF'))),
-    new Ed(normalizeRGB(hexToRgba('#00B8D4')))
+    new Ed(normalizeRGB(hexToRgba('#00B8D4'))),
   ],
   [
     new Ed(normalizeRGB(hexToRgba('#A7FFEB'))),
     new Ed(normalizeRGB(hexToRgba('#64FFDA'))),
     new Ed(normalizeRGB(hexToRgba('#1DE9B6'))),
-    new Ed(normalizeRGB(hexToRgba('#00BFA5')))
+    new Ed(normalizeRGB(hexToRgba('#00BFA5'))),
   ],
   [
     new Ed(normalizeRGB(hexToRgba('#B9F6CA'))),
     new Ed(normalizeRGB(hexToRgba('#69F0AE'))),
     new Ed(normalizeRGB(hexToRgba('#00E676'))),
-    new Ed(normalizeRGB(hexToRgba('#00C853')))
+    new Ed(normalizeRGB(hexToRgba('#00C853'))),
   ],
   [
     new Ed(normalizeRGB(hexToRgba('#CCFF90'))),
     new Ed(normalizeRGB(hexToRgba('#B2FF59'))),
     new Ed(normalizeRGB(hexToRgba('#76FF03'))),
-    new Ed(normalizeRGB(hexToRgba('#64DD17')))
+    new Ed(normalizeRGB(hexToRgba('#64DD17'))),
   ],
   [
     new Ed(normalizeRGB(hexToRgba('#F4FF81'))),
     new Ed(normalizeRGB(hexToRgba('#EEFF41'))),
     new Ed(normalizeRGB(hexToRgba('#C6FF00'))),
-    new Ed(normalizeRGB(hexToRgba('#AEEA00')))
+    new Ed(normalizeRGB(hexToRgba('#AEEA00'))),
   ],
   [
     new Ed(normalizeRGB(hexToRgba('#FFFF8D'))),
     new Ed(normalizeRGB(hexToRgba('#FFFF00'))),
     new Ed(normalizeRGB(hexToRgba('#FFEA00'))),
-    new Ed(normalizeRGB(hexToRgba('#FFD600')))
+    new Ed(normalizeRGB(hexToRgba('#FFD600'))),
   ],
   [
     new Ed(normalizeRGB(hexToRgba('#FFE57F'))),
     new Ed(normalizeRGB(hexToRgba('#FFD740'))),
     new Ed(normalizeRGB(hexToRgba('#FFC400'))),
-    new Ed(normalizeRGB(hexToRgba('#FFAB00')))
+    new Ed(normalizeRGB(hexToRgba('#FFAB00'))),
   ],
   [
     new Ed(normalizeRGB(hexToRgba('#FFD180'))),
     new Ed(normalizeRGB(hexToRgba('#FFAB40'))),
     new Ed(normalizeRGB(hexToRgba('#FF9100'))),
-    new Ed(normalizeRGB(hexToRgba('#FF6D00')))
+    new Ed(normalizeRGB(hexToRgba('#FF6D00'))),
   ],
   [
     new Ed(normalizeRGB(hexToRgba('#FF9E80'))),
     new Ed(normalizeRGB(hexToRgba('#FF6E40'))),
     new Ed(normalizeRGB(hexToRgba('#FF3D00'))),
-    new Ed(normalizeRGB(hexToRgba('#DD2C00')))
-  ]
+    new Ed(normalizeRGB(hexToRgba('#DD2C00'))),
+  ],
 ];
 export const Ld = [
   2.048875457,
@@ -339,7 +342,7 @@ export const Ld = [
   15.46585818,
   15.09779227,
   15.13738673,
-  15.09818372
+  15.09818372,
 ];
 export const Md = [
   1.762442714,
@@ -351,5 +354,132 @@ export const Md = [
   16.27071136,
   16.54160806,
   17.35916727,
-  19.88410864
+  19.88410864,
 ];
+// Local Functions
+function Yd(a, B, accent) {
+  const refPalletes = accent ? KdA : Kd;
+  const b = B === undefined ? refPalletes : B;
+  let d = b[0]; let e = -1;
+  if (!b.length || !b[0].length) throw Error('Invalid golden palettes');
+  for (let c = Infinity, l = 0; l < b.length; l += 1) {
+    for (let h = 0; h < b[l].length && c > 0; h += 1) {
+      let g = b[l][h];
+      const f = (g.g + a.g) / 2;
+      let m = Math.sqrt((g.A ** 2) + (g.B ** 2));
+      let n = Math.sqrt((a.A ** 2) + (a.B ** 2));
+      let u = (m + n) / 2;
+      u = 0.5
+        * (1
+          - Math.sqrt((u ** 7) / ((u ** 7) + (25 ** 7))));
+      let q = g.A * (1 + u);
+      let p = a.A * (1 + u);
+      let r = Math.sqrt((q ** 2) + (g.B ** 2));
+      let t = Math.sqrt((p ** 2) + (a.B ** 2));
+      u = t - r;
+      const v = (r + t) / 2;
+      q = Jd(g.B, q);
+      p = Jd(a.B, p);
+      r = 2
+        * Math.sqrt(r * t)
+        * Math.sin(
+          (Math.abs(m) < 1e-4 || Math.abs(n) < 1e-4
+            ? 0
+            : Math.abs(p - q) <= 180
+              ? p - q
+              : p <= q ? p - q + 360 : p - q - 360)
+            / 2
+            * Math.PI
+            / 180
+        );
+      m = Math.abs(m) < 1e-4 || Math.abs(n) < 1e-4
+        ? 0
+        : Math.abs(p - q) <= 180
+          ? (q + p) / 2
+          : q + p < 360 ? (q + p + 360) / 2 : (q + p - 360) / 2;
+      n = 1 + 0.045 * v;
+      t = 1
+        + 0.015
+          * v
+          * (1
+            - 0.17 * Math.cos((m - 30) * Math.PI / 180)
+            + 0.24 * Math.cos(2 * m * Math.PI / 180)
+            + 0.32 * Math.cos((3 * m + 6) * Math.PI / 180)
+            - 0.2 * Math.cos((4 * m - 63) * Math.PI / 180));
+      g = Math.sqrt(
+        (
+          ((a.g - g.g)
+            / (1
+              + 0.015
+                * ((f - 50) ** 2)
+                / Math.sqrt(20 + ((f - 50) ** 2))))
+          ** 2
+        )
+          + ((u / (1 * n)) ** 2)
+          + ((r / (1 * t)) ** 2)
+          + u
+            / (1 * n)
+            * Math.sqrt((v ** 7) / ((v ** 7) + (25 ** 7)))
+            * Math.sin(
+              60 * Math.exp(-(((m - 275) / 25) ** 2)) * Math.PI / 180
+            )
+            * -2
+            * (r / (1 * t))
+      );
+      // eslint-disable-next-line
+      g < c && ((c = g), (d = b[l]), (e = h));
+    }
+  }
+  return {
+    fd: d,
+    ed: e,
+  };
+}
+// Exported Functions
+export function createPallete(a, accent) {
+  const refPalletes = accent ? KdA : Kd;
+  const refColor = accent ? 2 : 5;
+  let b;
+  b = b === undefined ? refPalletes : b;
+  const c = Ed(a);
+  let
+    d = Yd(c, b, accent);
+  b = d.fd;
+  d = d.ed;
+  const e = b[d];
+  const l = Gd(e);
+  const h = Gd(c);
+  const g = Gd(b[refColor]).T < 30;
+  const f = l.g - h.g;
+  const m = l.T - h.T;
+  const n = l.hue - h.hue;
+  const u = Ld[d];
+  const q = Md[d];
+  let p = 100;
+  return b.map((R, T) => {
+    let r = R; let t = T;
+    // eslint-disable-next-line
+    if (r === e) return (p = Math.max (h.g - 1.7, 0)), a;
+    r = Gd(r);
+    let v = r.g - Ld[t] / u * f;
+    v = Math.min(v, p);
+    t = new Fd(
+      L(v, 0, 100),
+      Math.max(0, g ? r.T - m : r.T - m * Math.min(Md[t] / q, 1.25)),
+      (r.hue - n + 360) % 360
+    );
+    p = Math.max(t.g - 1.7, 0);
+    r = t.hue * Math.PI / 180;
+    t = new Y(t.g, t.T * Math.cos(r), t.T * Math.sin(r), t.alpha);
+    let z = (t.g + 16) / 116;
+    r = 0.95047 * Id(z + t.A / 500);
+    v = 1 * Id(z);
+    z = 1.08883 * Id(z - t.B / 200);
+    return new U(
+      L(Hd(3.2404542 * r + -1.5371385 * v + -0.4985314 * z), 0, 1),
+      L(Hd(-0.969266 * r + 1.8760108 * v + 0.041556 * z), 0, 1),
+      L(Hd(0.0556434 * r + -0.2040259 * v + 1.0572252 * z), 0, 1),
+      t.alpha
+    );
+  });
+}

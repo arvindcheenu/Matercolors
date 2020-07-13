@@ -1,10 +1,11 @@
-import Matercolor from '../lib';
+import Matercolor from '../src/index.js';
+
 const PurplePalette = new Matercolor ('#6200EE');
 console.log ('\n\nPALETTE CLASS\n\n');
-console.log (PurplePalette);
+console.log (JSON.stringify (PurplePalette, null, 2));
 // Matercolor {color: "#6200EE", options: Object, palette: function (), constructor: Object}
 console.log ('\n\nPALETTE OBJECT\n\n');
-console.log (PurplePalette.palette ());
+console.log (JSON.stringify (PurplePalette.palette (), null, 2));
 /**
  * Object {primary: Object}
     primary: Object
@@ -25,8 +26,8 @@ console.log (PurplePalette.palette ());
 */
 
 console.log ('\n\nPRIMARY PALETTE SHADES\n\n');
-console.log (PurplePalette.shades ('primary'));
+console.log (JSON.stringify (PurplePalette.shades ('primary'), null, 2));
 // Object {light: Object, main: Object, dark: Object}
 console.log ('\n\nPRIMARY PALETTE ACCENTS\n\n');
-console.log (PurplePalette.accents ('primary'));
+console.log (JSON.stringify (PurplePalette.accents ('primary'), null, 2));
 // Object {A100: Object, A200: Object, A400: Object, A700: Object}
