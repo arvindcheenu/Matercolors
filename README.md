@@ -11,6 +11,7 @@
 <a href="https://github.com/arvindcheenu">Created with ❤️ by <b>Arvind Srinivasan.<b></a>
 </p>
 
+
 ## 🎉 Installation
 
 Use the package manager [npm](https://www.npmjs.com/) to install `matercolors` from commandline.
