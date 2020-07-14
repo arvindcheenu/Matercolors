@@ -1,6 +1,6 @@
 <p align="center">
-   <a href="https://viewer.tetr8labs.net">
-     <img width="100" src="images/logo.png" alt="Tetrate">
+   <a href="https://www.npmjs.com/package/@arvindcheenu/matercolor">
+     <img width="100" src="https://i.ibb.co/3FYNrs3/logo.png" alt="Matercolor">
    </a>
    <h1 align="center">Matercolor</h1>
 </p>
@@ -17,11 +17,11 @@
 Use the package manager [npm](https://www.npmjs.com/) to install `matercolors` from commandline.
 
 ```bash
-npm i matercolors
+npm i @arvindcheenu/matercolor
 ```
 Alternatively, you can update your `package.json` as:
 ```bash
-"matercolors": "1.0.0"
+"@arvindcheenu/matercolor": "1.0.0"
 ```
  ***...aand thats it! Now lets' dive right in!***
 
