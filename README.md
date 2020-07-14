@@ -22,12 +22,15 @@
 
 Use the package manager [npm](https://www.npmjs.com/) to install `matercolors` from commandline.
 
+> **⚠️ Please Note!** <br>
+> It is recommended to use the latest version as v1.0.1 had a bug introduced during linting. It has been **resolved in v1.0.2**.
+
 ```bash
 npm i @arvindcheenu/matercolor
 ```
 Alternatively, you can update your `package.json` as:
 ```bash
-"@arvindcheenu/matercolor": "1.0.0"
+"@arvindcheenu/matercolor": "^1.0.2"
 ```
  ***...aand thats it! Now lets' dive right in!***
 
