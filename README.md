@@ -10,7 +10,7 @@
    <img alt="npm" src="https://img.shields.io/npm/dt/matercolors?label=overall%20downloads&style=flat-square">
    <img alt="npm bundle size (scoped)" src="https://img.shields.io/bundlephobia/min/matercolors?label=npm%20bundle%20size&style=flat-square">
    <img alt="npm dependencies" src="https://img.shields.io/static/v1?label=dependencies&message=0&color=brightgreen&style=flat-square">
-   <img alt="NPM" src="https://img.shields.io/npm/l/@arvindcheenu/matercolor?style=flat-square">
+   <img alt="NPM" src="https://img.shields.io/npm/l/matercolors?style=flat-square">
   <br/> <br/>
   A tiny, <b>zero-dependency</b> libary for building harmonious material palettes for <b>any color</b>.
 </p>
@@ -41,7 +41,7 @@ Alternatively, you can update your `package.json` as:
 After installing, import and use the library like any ES6 default imports. For example like this:
 
 ```js
-import Matercolor from '@arvindcheenu/matercolor'
+import Matercolor from 'matercolors'
 let PurplePalette = new Matercolor('#6200EE')
 ```
 Logging `PurplePalette` gives the output of the constructor with the following organisation.
