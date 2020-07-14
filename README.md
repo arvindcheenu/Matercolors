@@ -97,35 +97,77 @@ PurplePalette.shades("primary") // where primary is a palette type
 which returns the **light**, **main** and **dark** variants of the color (see below). The choice of these palettes can be configured through tweaking the [**options**](#🔧-options).
 
 ```js
-{ light:
-   { hex: '#626262',
-     rgb: { r: 98, g: 98, b: 98, string: 'rgb(98,98,98)' },
-     hsl: { h: 0, s: 0, l: 38.4, string: 'hsl(0,0%,38.4%)' },
-     cymk:
-      { c: 0, y: 0, m: 0, k: 61.5686, string: 'cymk(0%,0%,0%,61.5686%)' },
-     contrastText: 'white' },
-  main:
-   { hex: '#6200ee',
-     rgb: { r: 98, g: 0, b: 238, string: 'rgb(98,0,238)' },
-     hsl: { h: 265, s: 100, l: 46.7, string: 'hsl(265,100%,46.7%)' },
-     cymk:
-      { c: 58.8235,
-        y: 0,
-        m: 100,
-        k: 6.6667,
-        string: 'cymk(58.8235%,0%,100%,6.6667%)' },
-     contrastText: 'white' },
-  dark:
-   { hex: '#620062',
-     rgb: { r: 98, g: 0, b: 98, string: 'rgb(98,0,98)' },
-     hsl: { h: 300, s: 100, l: 19.2, string: 'hsl(300,100%,19.2%)' },
-     cymk:
-      { c: 0,
-        y: 0,
-        m: 100,
-        k: 61.5686,
-        string: 'cymk(0%,0%,100%,61.5686%)' },
-     contrastText: 'white' } }
+{
+  "light": {
+    "hex": "#b894f6",
+    "rgb": {
+      "r": 184,
+      "g": 148,
+      "b": 246,
+      "string": "rgb(184,148,246)"
+    },
+    "hsl": {
+      "h": 262,
+      "s": 84.5,
+      "l": 77.3,
+      "string": "hsl(262,84.5%,77.3%)"
+    },
+    "cymk": {
+      "c": 25.2033,
+      "y": 0,
+      "m": 39.8374,
+      "k": 3.5294,
+      "string": "cymk(25.2033%,0%,39.8374%,3.5294%)"
+    },
+    "contrastText": "black"
+  },
+  "main": {
+    "hex": "#6200ee",
+    "rgb": {
+      "r": 98,
+      "g": 0,
+      "b": 238,
+      "string": "rgb(98,0,238)"
+    },
+    "hsl": {
+      "h": 265,
+      "s": 100,
+      "l": 46.7,
+      "string": "hsl(265,100%,46.7%)"
+    },
+    "cymk": {
+      "c": 58.8235,
+      "y": 0,
+      "m": 100,
+      "k": 6.6667,
+      "string": "cymk(58.8235%,0%,100%,6.6667%)"
+    },
+    "contrastText": "white"
+  },
+  "dark": {
+    "hex": "#3f00e0",
+    "rgb": {
+      "r": 63,
+      "g": 0,
+      "b": 224,
+      "string": "rgb(63,0,224)"
+    },
+    "hsl": {
+      "h": 257,
+      "s": 100,
+      "l": 43.9,
+      "string": "hsl(257,100%,43.9%)"
+    },
+    "cymk": {
+      "c": 71.875,
+      "y": 0,
+      "m": 100,
+      "k": 12.1569,
+      "string": "cymk(71.875%,0%,100%,12.1569%)"
+    },
+    "contrastText": "white"
+  }
+}
 ```
 
 Similarly, for extracting the **accents** from the palette object, we can use:
@@ -135,39 +177,100 @@ PurplePalette.accents("primary") // where primary is a palette type
 which, for the given color, generates the output:
 
 ```js
-{ A100:
-   { hex: '#626262',
-     rgb: { r: 98, g: 98, b: 98, string: 'rgb(98,98,98)' },
-     hsl: { h: 0, s: 0, l: 38.4, string: 'hsl(0,0%,38.4%)' },
-     cymk:
-      { c: 0, y: 0, m: 0, k: 61.5686, string: 'cymk(0%,0%,0%,61.5686%)' },
-     contrastText: 'white' },
-  A200:
-   { hex: '#626262',
-     rgb: { r: 98, g: 98, b: 98, string: 'rgb(98,98,98)' },
-     hsl: { h: 0, s: 0, l: 38.4, string: 'hsl(0,0%,38.4%)' },
-     cymk:
-      { c: 0, y: 0, m: 0, k: 61.5686, string: 'cymk(0%,0%,0%,61.5686%)' },
-     contrastText: 'white' },
-  A400:
-   { hex: '#626262',
-     rgb: { r: 98, g: 98, b: 98, string: 'rgb(98,98,98)' },
-     hsl: { h: 0, s: 0, l: 38.4, string: 'hsl(0,0%,38.4%)' },
-     cymk:
-      { c: 0, y: 0, m: 0, k: 61.5686, string: 'cymk(0%,0%,0%,61.5686%)' },
-     contrastText: 'white' },
-  A700:
-   { hex: '#6200ee',
-     rgb: { r: 98, g: 0, b: 238, string: 'rgb(98,0,238)' },
-     hsl: { h: 265, s: 100, l: 46.7, string: 'hsl(265,100%,46.7%)' },
-     cymk:
-      { c: 58.8235,
-        y: 0,
-        m: 100,
-        k: 6.6667,
-        string: 'cymk(58.8235%,0%,100%,6.6667%)' },
-     contrastText: 'white' } }
-
+{
+  "A100": {
+    "hex": "#b388ff",
+    "rgb": {
+      "r": 179,
+      "g": 136,
+      "b": 255,
+      "string": "rgb(179,136,255)"
+    },
+    "hsl": {
+      "h": 262,
+      "s": 100,
+      "l": 76.7,
+      "string": "hsl(262,100%,76.7%)"
+    },
+    "cymk": {
+      "c": 29.8039,
+      "y": 0,
+      "m": 46.6667,
+      "k": 0,
+      "string": "cymk(29.8039%,0%,46.6667%,0%)"
+    },
+    "contrastText": "black"
+  },
+  "A200": {
+    "hex": "#7c4dff",
+    "rgb": {
+      "r": 124,
+      "g": 77,
+      "b": 255,
+      "string": "rgb(124,77,255)"
+    },
+    "hsl": {
+      "h": 256,
+      "s": 100,
+      "l": 65.1,
+      "string": "hsl(256,100%,65.1%)"
+    },
+    "cymk": {
+      "c": 51.3725,
+      "y": 0,
+      "m": 69.8039,
+      "k": 0,
+      "string": "cymk(51.3725%,0%,69.8039%,0%)"
+    },
+    "contrastText": "white"
+  },
+  "A400": {
+    "hex": "#6420ff",
+    "rgb": {
+      "r": 100,
+      "g": 32,
+      "b": 255,
+      "string": "rgb(100,32,255)"
+    },
+    "hsl": {
+      "h": 258,
+      "s": 100,
+      "l": 56.3,
+      "string": "hsl(258,100%,56.3%)"
+    },
+    "cymk": {
+      "c": 60.7843,
+      "y": 0,
+      "m": 87.451,
+      "k": 0,
+      "string": "cymk(60.7843%,0%,87.451%,0%)"
+    },
+    "contrastText": "white"
+  },
+  "A700": {
+    "hex": "#6200ee",
+    "rgb": {
+      "r": 98,
+      "g": 0,
+      "b": 238,
+      "string": "rgb(98,0,238)"
+    },
+    "hsl": {
+      "h": 265,
+      "s": 100,
+      "l": 46.7,
+      "string": "hsl(265,100%,46.7%)"
+    },
+    "cymk": {
+      "c": 58.8235,
+      "y": 0,
+      "m": 100,
+      "k": 6.6667,
+      "string": "cymk(58.8235%,0%,100%,6.6667%)"
+    },
+    "contrastText": "white"
+  }
+}
 ```
 These outputs can also be used in conjunction with [Material UI's](https://material-ui.com/) 
 [**createMuiTheme**](https://material-ui.com/customization/theming/#createmuitheme-options-args-theme) to configure custom palettes. For a better understanding, you can checkout the demo.
