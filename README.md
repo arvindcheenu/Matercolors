@@ -8,7 +8,7 @@
   A tiny, <b>zero-dependency</b> libary for building harmonious material palettes for <b>any color</b>.
 </p>
 <p align="center">
-<a href="https://github.com/arvindcheenu">Created with ❤️ by <b>Arvind Srinivasan.<b></a>
+<a href="https://github.com/arvindcheenu">Created with ❤️ by <b>Arvind Srinivasan.</b></a>
 </p>
 
 
