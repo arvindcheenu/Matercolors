@@ -5,7 +5,7 @@
    <h1 align="center">Matercolor</h1>
 </p>
 <p align="center">
-   <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/@arvindcheenu/matercolor?style=flat-square">
+   <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/arvindcheenu/matercolor?style=flat-square">
    <img alt="npm (scoped)" src="https://img.shields.io/npm/v/@arvindcheenu/matercolor?color=cc3534&style=flat-square">
    <img alt="npm bundle size (scoped)" src="https://img.shields.io/bundlephobia/min/@arvindcheenu/matercolor?label=npm%20bundle%20size&style=flat-square">
    <img alt="npm dependencies" src="https://img.shields.io/static/v1?label=dependencies&message=0&color=brightgreen&style=flat-square">
