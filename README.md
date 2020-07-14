@@ -16,8 +16,13 @@
 </p>
 <p align="center">
 <a href="https://github.com/arvindcheenu">Created with ❤️ by <b>Arvind Srinivasan.</b></a>
+ <br><br>
 </p>
 
+<a href="https://codesandbox.io/s/matercolors-vanilla-js-demo-bkkoh?fontsize=14&hidenavigation=1&theme=dark">
+  <img alt="Edit Matercolors - Vanilla JS Demo in Code Sandbox" src="https://raw.githubusercontent.com/arvindcheenu/matercolor/master/images/matercolor-demo.gif">
+</a>
+<br>
 
 ## 🎉 Installation
 
@@ -283,11 +288,7 @@ which, for the given color, generates the output:
 }
 ```
 These outputs can also be used in conjunction with [Material UI's](https://material-ui.com/) 
-[**createMuiTheme**](https://material-ui.com/customization/theming/#createmuitheme-options-args-theme) to configure custom palettes. For a better understanding, you can checkout the demo.
-
-### 🕹️ Demo Project
-
-*🚧🚧🚧&nbsp;&nbsp; **CONSTRUCTION IN PROGRESS** &nbsp;&nbsp;🚧🚧🚧*
+[**createMuiTheme**](https://material-ui.com/customization/theming/#createmuitheme-options-args-theme) to configure custom palettes. For a better understanding on how to use, you can checkout the demo.
 
 ### 🛣️ Roadmap
 #### Current Stable Release
@@ -295,6 +296,7 @@ These outputs can also be used in conjunction with [Material UI's](https://mater
  - [x] Generate Primary Palette for any given color 
  - [x] Generate Accents for Palette 
  - [x] Get Contrast Colors for Foreground Text
+ - [x] Added Demo Project to demonstrate Usage
 
 #### Next Possible Stable Release
 
