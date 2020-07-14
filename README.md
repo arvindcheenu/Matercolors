@@ -1,13 +1,14 @@
 <p align="center">
    <a href="https://www.npmjs.com/package/@arvindcheenu/matercolor">
-     <img width="100" src="https://i.ibb.co/3FYNrs3/logo.png" alt="Matercolor">
+     <img width="100" src="https://i.ibb.co/3FYNrs3/logo.png" alt="Matercolors">
    </a>
-   <h1 align="center">Matercolor</h1>
+   <h1 align="center">Matercolors</h1>
 </p>
 <p align="center">
    <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/arvindcheenu/matercolor?style=flat-square">
-   <img alt="npm (scoped)" src="https://img.shields.io/npm/v/@arvindcheenu/matercolor?color=cc3534&style=flat-square">
-   <img alt="npm bundle size (scoped)" src="https://img.shields.io/bundlephobia/min/@arvindcheenu/matercolor?label=npm%20bundle%20size&style=flat-square">
+   <img alt="npm" src="https://img.shields.io/npm/v/matercolors?color=cc3534&style=flat-square">
+   <img alt="npm" src="https://img.shields.io/npm/dt/matercolors?label=overall%20downloads&style=flat-square">
+   <img alt="npm bundle size (scoped)" src="https://img.shields.io/bundlephobia/min/matercolors?label=npm%20bundle%20size&style=flat-square">
    <img alt="npm dependencies" src="https://img.shields.io/static/v1?label=dependencies&message=0&color=brightgreen&style=flat-square">
    <img alt="NPM" src="https://img.shields.io/npm/l/@arvindcheenu/matercolor?style=flat-square">
   <br/> <br/>
@@ -26,11 +27,11 @@ Use the package manager [npm](https://www.npmjs.com/) to install `matercolors` f
 > It is recommended to use the latest version as v1.0.1 had a bug introduced during linting. It has been **resolved in v1.0.2**.
 
 ```bash
-npm i @arvindcheenu/matercolor
+npm i matercolors
 ```
 Alternatively, you can update your `package.json` as:
 ```bash
-"@arvindcheenu/matercolor": "^1.0.2"
+"matercolors": "^1.0.2"
 ```
  ***...aand thats it! Now lets' dive right in!***
 
