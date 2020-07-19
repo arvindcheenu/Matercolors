@@ -71,8 +71,8 @@ The following methods are available as of version **1.0.0**.
 | Method | Type | What it returns |
 |-|-|-|
 | `.palette()` | `Getter` | A Material Palette Object with Text Contrast Values for the given color |
-| `.shades()` | `Getter` | Light, Main and Dark shades for the given color |
-| `.accents()` | `Getter` | Accent Color Palette for the given color |
+| `.shades(paletteType)` | `Getter` | Light, Main and Dark shades for a selected palette type |
+| `.accents(paletteType)` | `Getter` | Accent Color Palette for a selected palette type |
 
 #### 🏗️ Palette Object Structure
 Logging the palette output for the `PurplePalette` color by
@@ -100,7 +100,20 @@ we get an output that follows the following structure.
     A200 : [Object],
     A400 : [Object],
     A700 : [Object],
-  } // ...More coming soon
+  }
+  secondary : { // type of palette
+    50 :  [Object]
+    100 : [Object],
+    200 : [Object],
+    ...
+    900 : [Object], // darkest color in palette
+    // Accents 
+    A100 : [Object],
+    A200 : [Object],
+    A400 : [Object],
+    A700 : [Object],
+  }
+  // ...More coming soon
 }
 ```
 > All the other functions are simply helpers to access specific parts of the complete palette. 
@@ -287,6 +300,8 @@ which, for the given color, generates the output:
   }
 }
 ```
+Similar outputs are generated for the **secondary** palette type.
+
 These outputs can also be used in conjunction with [Material UI's](https://material-ui.com/) 
 [**createMuiTheme**](https://material-ui.com/customization/theming/#createmuitheme-options-args-theme) to configure custom palettes. For a better understanding on how to use, you can checkout the demo.
 
@@ -300,7 +315,7 @@ These outputs can also be used in conjunction with [Material UI's](https://mater
 
 #### Next Possible Stable Release
 
- - [ ] Generate Complementary Palette 
+ - [x] Generate Complementary Palette 
  - [ ] Generate Analogous Palette
  - [ ] Generate Triadic Palette
 
