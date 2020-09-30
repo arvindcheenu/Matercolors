@@ -318,17 +318,13 @@ These outputs can also be used in conjunction with [Material UI's](https://mater
  - [x] Generate Complementary Palette 
  - [ ] Generate Analogous Palette
  - [ ] Generate Triadic Palette
-
-#### The Future
-
- - [ ] Coming soon
  
 ### 👐 Contributing 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. Please make sure to create or update tests as appropriate.
 
-### Acknowledgements
+### 🙏 Acknowledgements
 * [edelstone/**material-palette-generator**](https://github.com/edelstone/material-palette-generator)
 * [mbitson/**mcg**](https://github.com/mbitson/mcg)
 
-### 📝 License
+### 📜 License
 [MIT](https://choosealicense.com/licenses/mit/)
