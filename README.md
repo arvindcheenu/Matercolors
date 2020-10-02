@@ -332,6 +332,38 @@ const theme = createMuiTheme({
 });
 ```
 
+### Usage with `colorthief`
+
+**Want you could create a full-fledged theme that matches your logo?**
+
+After installing colorthief (`npm i colorthief`) you can use the following code snippet as reference.
+
+```js
+const Matercolor = require('matercolors');
+const ColorThief = require('colorthief');
+
+const imageName = 'my-awesome-logo.png'; // path to your image file
+const numberOfColors = 5; // change the number to as many colors as you want
+let brandPalette = [];
+
+const rgbToHex = (rgb) => '#' + rgb.map(x => {
+  const hex = x.toString(16)
+  return hex.length === 1 ? '0' + hex : hex
+}).join('')
+
+const img = resolve(process.cwd(), imageName);
+ColorThief.getPalette(img, numberOfColors)
+    .then(palette => { 
+        for (let i=0, len=palette.length; i < len; i++) {
+          let color = new Matercolor(rgbToHex(palette[i])).palette()
+          brandPalette.push(color);          
+        }
+        console.log(JSON.stringify(brandPalette, null, 2));
+    })
+    .catch(err => { console.log(err) })
+```
+This code will log the Matercolor Palette Objects for every dominant color extracted from the image in a pretty format. 
+
 ### 🛣️ Roadmap
 #### Current Stable Release
 
