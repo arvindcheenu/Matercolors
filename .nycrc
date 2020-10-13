@@ -1,0 +1,8 @@
+{
+    "reporter": [
+      "json-summary",
+      "html",
+      "text"
+    ],
+    "lines" : 100
+}

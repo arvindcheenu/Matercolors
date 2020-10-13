@@ -1,4 +1,4 @@
-export const T = 2 ** 16;
+export const TwoE16 = 2 ** 16
 export const keys = [
   50,
   100,
@@ -13,11 +13,11 @@ export const keys = [
   'A100',
   'A200',
   'A400',
-  'A700',
-];
+  'A700'
+]
 export const defaultOptions = {
   threshold: 128,
   light: 200,
   main: 500,
-  dark: 700,
-};
+  dark: 700
+}
