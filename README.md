@@ -23,8 +23,6 @@
   <img alt="Edit Matercolors - Vanilla JS Demo in Code Sandbox" src="https://raw.githubusercontent.com/arvindcheenu/matercolor/master/images/matercolor-demo.gif">
 </a>
 <br>
-https://unpkg.com/browse/matercolors@1.2.0/dist/
-
 
 ## 🎉 Installation
 
@@ -39,6 +37,7 @@ Alternatively, you can update your `package.json` as:
 ```
 
 > **✨ New in v.1.2 : Matercolor now works in the browser!** 
+> 
 > If you want to use it as a CDN instead, you can access it through `unpkg`!
 > 
 <a href="https://unpkg.com/browse/matercolors@1.2.0/dist/">
