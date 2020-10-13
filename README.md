@@ -305,6 +305,65 @@ Similar outputs are generated for the **secondary** palette type.
 These outputs can also be used in conjunction with [Material UI's](https://material-ui.com/) 
 [**createMuiTheme**](https://material-ui.com/customization/theming/#createmuitheme-options-args-theme) to configure custom palettes. For a better understanding on how to use, you can checkout the demo.
 
+### Usage with `createMuiTheme` 
+
+The following snippet shows an example usage with `createMuiTheme()` using the `shades()` function:
+```js
+import Matercolor from 'matercolors';
+import { createMuiTheme } from '@material-ui/core/styles';
+
+let purple = new Matercolor('#6200EE');
+let primary = purple.shades("primary");
+let secondary = purple.shades("secondary"); // complementary palette generated for you!
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: primary.main.hex,
+      light: primary.light.hex,
+      dark: primary.dark.hex,
+    },
+    secondary: {
+      main: secondary.main.hex,
+      light: secondary.light.hex,
+      dark: secondary.dark.hex,
+    },
+  },
+});
+```
+
+### Usage with `colorthief`
+
+**Want you could create a full-fledged theme that matches your logo?**
+
+After installing colorthief (`npm i colorthief`) you can use the following code snippet as reference.
+
+```js
+const Matercolor = require('matercolors');
+const ColorThief = require('colorthief');
+
+const imageName = 'my-awesome-logo.png'; // path to your image file
+const numberOfColors = 5; // change the number to as many colors as you want
+let brandPalette = [];
+
+const rgbToHex = (rgb) => '#' + rgb.map(x => {
+  const hex = x.toString(16)
+  return hex.length === 1 ? '0' + hex : hex
+}).join('')
+
+const img = resolve(process.cwd(), imageName);
+ColorThief.getPalette(img, numberOfColors)
+    .then(palette => { 
+        for (let i=0, len=palette.length; i < len; i++) {
+          let color = new Matercolor(rgbToHex(palette[i])).palette()
+          brandPalette.push(color);          
+        }
+        console.log(JSON.stringify(brandPalette, null, 2));
+    })
+    .catch(err => { console.log(err) })
+```
+This code will log the Matercolor Palette Objects for every dominant color extracted from the image in a pretty format. 
+
 ### 🛣️ Roadmap
 #### Current Stable Release
 
@@ -318,17 +377,13 @@ These outputs can also be used in conjunction with [Material UI's](https://mater
  - [x] Generate Complementary Palette 
  - [ ] Generate Analogous Palette
  - [ ] Generate Triadic Palette
-
-#### The Future
-
- - [ ] Coming soon
  
 ### 👐 Contributing 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. Please make sure to create or update tests as appropriate.
 
-### Acknowledgements
+### 🙏 Acknowledgements
 * [edelstone/**material-palette-generator**](https://github.com/edelstone/material-palette-generator)
 * [mbitson/**mcg**](https://github.com/mbitson/mcg)
 
-### 📝 License
+### 📜 License
 [MIT](https://choosealicense.com/licenses/mit/)
