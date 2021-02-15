@@ -1,6 +1,6 @@
 {
   "name": "matercolors",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "A tiny, zero-dependency libary for building harmonious material palettes for any color.",
   "main": "dist/index.js",
   "umd:main": "dist/index.umd.js",
@@ -12,6 +12,7 @@
     "build": "microbundle --name Matercolor --compress --raw true",
     "lint": "standard --fix",
     "test": "ava",
+    "demo": "node ./examples/index.js",
     "coverage": "nyc npm run test"
   },
   "ava": {

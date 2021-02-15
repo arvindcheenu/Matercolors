@@ -1,49 +1,4 @@
 /* eslint-disable no-bitwise */
-export function RGBToHSL (rgb) {
-  const r = rgb.r / 255
-  const g = rgb.g / 255
-  const b = rgb.b / 255
-  const cmin = Math.min(r, g, b)
-  const cmax = Math.max(r, g, b)
-  const delta = cmax - cmin
-  let h = 0
-  let s = 0
-  let l = 0
-  if (delta === 0) h = 0
-  else if (cmax === r) h = ((g - b) / delta) % 6
-  else if (cmax === g) h = (b - r) / delta + 2
-  else h = (r - g) / delta + 4
-  h = Math.round(h * 60)
-  if (h < 0) h += 360
-  l = (cmax + cmin) / 2
-  s = delta === 0 ? 0 : delta / (1 - Math.abs(2 * l - 1))
-  s = +(s * 100).toFixed(1)
-  l = +(l * 100).toFixed(1)
-  return {
-    h,
-    s,
-    l,
-    string: `hsl(${h},${s}%,${l}%)`
-  }
-}
-export function RGBToCYMK (rgb) {
-  const r = rgb.r / 255
-  const g = rgb.g / 255
-  const b = rgb.b / 255
-  let k = Math.min(1 - r, 1 - g, 1 - b)
-  const c = parseFloat((((1 - r - k) / (1 - k) || 0) * 100).toFixed(4))
-  const m = parseFloat((((1 - g - k) / (1 - k) || 0) * 100).toFixed(4))
-  const y = parseFloat((((1 - b - k) / (1 - k) || 0) * 100).toFixed(4))
-  k *= 100
-  k = parseFloat(k.toFixed(4))
-  return {
-    c,
-    y,
-    m,
-    k,
-    string: `cymk(${c}%,${y}%,${m}%,${k}%)`
-  }
-}
 export function hexToRgba (hex) {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
   return result
@@ -70,11 +25,12 @@ export function rgbToHex (r, g, b) {
   return `#${componentToHex(r)}${componentToHex(g)}${componentToHex(b)}`
 }
 export function getContrastText ({ r, g, b }, threshold) {
-  const contrast = (Math.round(r * 299) + Math.round(g * 587) + Math.round(b * 114)) / 1000
+  const contrast =
+    (Math.round(r * 299) + Math.round(g * 587) + Math.round(b * 114)) / 1000
   return contrast >= threshold ? 'black' : 'white'
 }
 
-export function getComplementary (hex) {
+export function rotateColorBy (hex, rotationAmount) {
   const rgb = hexToRgba(hex)
   let r = rgb.r / 255.0
   let g = rgb.g / 255.0
@@ -85,7 +41,8 @@ export function getComplementary (hex) {
   let s
   const l = (max + min) / 2.0
   if (max === min) {
-    h = 0; s = 0 // achromatic
+    h = 0
+    s = 0 // achromatic
   } else {
     const d = max - min
     s = l > 0.5 ? d / (2.0 - max - min) : d / (max + min)
@@ -101,13 +58,15 @@ export function getComplementary (hex) {
   }
   h = h / 6.2832 * 360.0 + 0
   // Shift hue to opposite side of wheel and convert to [0-1] value
-  h += 180
+  h += rotationAmount
   if (h > 360) {
     h -= 360
   }
   h /= 360
   if (s === 0) {
-    r = l; g = l; b = l // achromatic
+    r = l
+    g = l
+    b = l // achromatic
   } else {
     const hue2rgb = function hue2rgb (p, q, T) {
       let t = T
