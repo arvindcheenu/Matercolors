@@ -19,5 +19,6 @@ export const defaultOptions = {
   threshold: 128,
   light: 200,
   main: 500,
-  dark: 700
+  dark: 700,
+  showContrastText: false
 }

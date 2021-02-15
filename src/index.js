@@ -1,98 +1,89 @@
 import { keys, defaultOptions } from './global.constants.js'
 import {
-  normalizeRGB, rgbToHex, hexToRgba, RGBToCYMK, RGBToHSL, getContrastText, getComplementary
+  normalizeRGB,
+  rgbToHex,
+  hexToRgba,
+  getContrastText,
+  rotateColorBy
 } from './color.utils.js'
 import { createPallete } from './goldenPalettes.js'
 export default class Matercolor {
   constructor (color, options) {
+    this.palette = {}
     this.color = color
-    const complementary = getComplementary(color)
-    this.complementary = () => complementary
     this.options = options
       ? Object.assign(defaultOptions, options)
       : defaultOptions
-    const paletteObject = {}
-    this.palette = () => paletteObject
-    this.getPalette()
+    this.complementary = () => rotateColorBy(this.color, 180)
+    this.firstAnalogous = () => rotateColorBy(this.color, -30)
+    this.secondAnalogous = () => rotateColorBy(this.color, 30)
+    this.firstTriadic = () => rotateColorBy(this.color, 60)
+    this.secondTriadic = () => rotateColorBy(this.color, 120)
+    this.palette.primary = this.makePalette('primary')
+    this.palette.complementary = this.makePalette('complementary')
+    this.palette.analogous = {}
+    this.palette.analogous.first = this.makePalette('firstAnalogous')
+    this.palette.analogous.second = this.makePalette('secondAnalogous')
+    this.palette.triadic = {}
+    this.palette.triadic.first = this.makePalette('firstTriadic')
+    this.palette.triadic.second = this.makePalette('secondTriadic')
   }
 
-  shades (paletteType) {
-    return {
-      light: this.palette()[paletteType][this.options.light],
-      main: this.palette()[paletteType][this.options.main],
-      dark: this.palette()[paletteType][this.options.dark]
+  makePalette (paletteName) {
+    const localObject = {}
+    let Color
+    if (paletteName === 'primary') {
+      Color = hexToRgba(this.color)
+    } else if (paletteName === 'complementary') {
+      Color = hexToRgba(this.complementary())
+    } else if (paletteName === 'firstAnalogous') {
+      Color = hexToRgba(this.firstAnalogous())
+    } else if (paletteName === 'secondAnalogous') {
+      Color = hexToRgba(this.secondAnalogous())
+    } else if (paletteName === 'analogous') {
+      const analogousObject = {}
+      analogousObject.first = this.makePalette('firstAnalogous')
+      analogousObject.second = this.makePalette('secondAnalogous')
+      return analogousObject
+    } else if (paletteName === 'firstTriadic') {
+      Color = hexToRgba(this.firstTriadic())
+    } else if (paletteName === 'secondTriadic') {
+      Color = hexToRgba(this.secondTriadic())
+    } else if (paletteName === 'triadic') {
+      const triadicObject = {}
+      triadicObject.first = this.makePalette('firstTriadic')
+      triadicObject.second = this.makePalette('secondTriadic')
+      return triadicObject
     }
-  }
-
-  accents (paletteType) {
-    return {
-      A100: this.palette()[paletteType].A100,
-      A200: this.palette()[paletteType].A200,
-      A400: this.palette()[paletteType].A400,
-      A700: this.palette()[paletteType].A700
-    }
-  }
-
-  getPalette () {
-    this.palette().primary = {}
-    this.palette().secondary = {}
-    const primaryPalette = createPallete(
-      normalizeRGB(hexToRgba(this.color))
-    ).map(u => rgbToHex(
-      Math.round(u.red * 255),
-      Math.round(u.green * 255),
-      Math.round(u.blue * 255)
-    ))
-    const primaryAccents = createPallete(
-      normalizeRGB(hexToRgba(this.color)),
-      true
-    ).map(u => rgbToHex(
-      Math.round(u.red * 255),
-      Math.round(u.green * 255),
-      Math.round(u.blue * 255)
-    ))
-    const secondaryPalette = createPallete(
-      normalizeRGB(hexToRgba(this.complementary()))
-    ).map(u => rgbToHex(
-      Math.round(u.red * 255),
-      Math.round(u.green * 255),
-      Math.round(u.blue * 255)
-    ))
-    const secondaryAccents = createPallete(
-      normalizeRGB(hexToRgba(this.complementary())),
-      true
-    ).map(u => rgbToHex(
-      Math.round(u.red * 255),
-      Math.round(u.green * 255),
-      Math.round(u.blue * 255)
-    ))
-    primaryPalette.push(...primaryAccents)
-    for (let i = 0; i < keys.length; i += 1) {
-      const colorObject = {}
-      colorObject.hex = primaryPalette[i]
-      colorObject.rgb = hexToRgba(primaryPalette[i])
-      colorObject.rgb.string = `rgb(${colorObject.rgb.r},${colorObject.rgb.g},${colorObject.rgb.b})`
-      colorObject.hsl = RGBToHSL(colorObject.rgb)
-      colorObject.cymk = RGBToCYMK(colorObject.rgb)
-      colorObject.contrastText = getContrastText(
-        colorObject.rgb,
-        this.options.threshold
+    const newPalette = createPallete(normalizeRGB(Color)).map(u =>
+      rgbToHex(
+        Math.round(u.red * 255),
+        Math.round(u.green * 255),
+        Math.round(u.blue * 255)
       )
-      this.palette().primary[keys[i]] = colorObject
-    }
-    secondaryPalette.push(...secondaryAccents)
-    for (let i = 0; i < keys.length; i += 1) {
-      const colorObject = {}
-      colorObject.hex = secondaryPalette[i]
-      colorObject.rgb = hexToRgba(secondaryPalette[i])
-      colorObject.rgb.string = `rgb(${colorObject.rgb.r},${colorObject.rgb.g},${colorObject.rgb.b})`
-      colorObject.hsl = RGBToHSL(colorObject.rgb)
-      colorObject.cymk = RGBToCYMK(colorObject.rgb)
-      colorObject.contrastText = getContrastText(
-        colorObject.rgb,
-        this.options.threshold
+    )
+    const newAccents = createPallete(normalizeRGB(Color), true).map(u =>
+      rgbToHex(
+        Math.round(u.red * 255),
+        Math.round(u.green * 255),
+        Math.round(u.blue * 255)
       )
-      this.palette().secondary[keys[i]] = colorObject
+    )
+    newPalette.push(...newAccents)
+    for (let i = 0; i < keys.length; i += 1) {
+      let colorObject = {}
+      if (this.options.showContrastText) {
+        colorObject.hex = newPalette[i]
+        const rgb = hexToRgba(newPalette[i])
+        colorObject.contrastText = getContrastText(
+          rgb,
+          this.options.threshold
+        )
+      } else {
+        colorObject = newPalette[i]
+      }
+      localObject[keys[i]] = colorObject
     }
+    return localObject
   }
 }
