@@ -20,9 +20,17 @@
 </p>
 <br>
 
+> **✨ New in v.2.2.10 : Skyrocketing Productivity!** 
+> 
+> Updated version to match Semantic Versioning Standards.
+> 
+> Removed the residual options that were missed in the latest major version.
+>
+> Most importantly,direct dot access functionality has been added to the constructor so that one can **quickly access the colors they need across palettes**.
+
 > **✨ New in v.2.0 : Lose some features, Gain even more!** 
 >
-> `shades` and `accents` helpers are removed as they were redundant. They are replaced by a `makePalette` helper function. This freed up some space for new palette generators for building `analogous` and `triadic` palettes. 
+> `shades` and `accents` are completely removed as they were redundant. They are replaced by a `makePalette` helper function. This freed up some space for new palette generators for building `analogous` and `triadic` palettes. 
 >
 > As color conversions can be done by other libraries, these helpers were removed to make API more expressive.
 >
@@ -59,24 +67,36 @@ let Purple = new Matercolor('#6200EE')
 Logging `Purple` gives the output of the constructor with the following organisation.
 ```js
 Matercolor {
+  // color keys in constructor for direct dot access 
+  this[ckey] = [String]
+  // ...where ckey is given by concatenating root keys with palette prefix.
   color: '#6200EE',
-  options: { threshold: 128, light: 200, main: 500, dark: 700, showContrastText: false },
+  options: { threshold: 128, showContrastText: false },
   palette: [Function] }
 ```
+
+As you can see here, ckey is given by concatenating root keys (`100` to `900`) with palette prefix. The palette name and the corresponding prefix is given in the following table:
+
+| Palette Name | Prefix |
+|-|-|
+| primary | `` |
+| complementary | `C` |
+| analogous primary | `A` |
+| analogous secondary | `A1` |
+| triadic primary | `T` |
+| triadic secondary | `T1` |
+
 ### 🔧 Options and Methods
-As you can see from the constructor, currently **Matercolor** offers **5** options for configuration.
+As you can see from the constructor, currently **Matercolor** offers **2** options for configuration.
 
 | Options | Type | Default | What it does |
 |-|-|-|-|
-| `light` |`Number`| `200` | Assigns **light** to the palette object with given key |
-| `main` |`Number`| `500` | Assigns  **main**  to the palette object with given key |
-| `dark` |`Number`| `700` | Assigns  **dark**  to the palette object with given key |
 | `threshold` |`Number`| `128` | Sets the **Contrast threshold** for the foreground text |
 | `showContrastText` |`Boolean`| `false` | Shows contrast text colour for each color in the palette |
 
 Apart from these options, the new Matercolor exposes a single function to generate specific palettes.
 
-#### makePalette(paletteName : `String`) returns `Object`
+#### makePalette(paletteName : `String`, updateRoot: `Boolean`) returns `Object`
 where `paletteName` can be any one of the following case-sensitive strings: **`primary`**, **`complementary`**, **`analogous`**, **`firstAnalogous`**, **`secondAnalogous`**, **`triadic`**, **`firstTriadic`**, **`secondTriadic`**.
 
 #### 🏗️ Palette Object Structure
@@ -95,21 +115,16 @@ we get an output that follows the following structure.
     200 : [String|Object],
     ...
     900 : [String|Object], // darkest color in palette
-    // Accents 
-    A100 : [String|Object],
-    A200 : [String|Object],
-    A400 : [String|Object],
-    A700 : [String|Object],
   },
   // similarly we have for other derived palettes
   complementary : { ... },
   analogous : {
-    first: { ... },
-    second: { ... },
+    primary: { ... },
+    secondary: { ... },
   },
   triadic : {
-    first: { ... },
-    second: { ... },
+    primary: { ... },
+    secondary: { ... },
   }
 }
 ```
@@ -125,23 +140,25 @@ import Matercolor from 'matercolors';
 import { createMuiTheme } from '@material-ui/core/styles';
 
 let purple = new Matercolor('#6200EE');
+/*
+You can still use this though you may not need to now:
 let primary = purple.palette.primary;
 let secondary = purple.palette.complementary; // complementary palette generated for you!
 // similarly use any derived palettes
-let analogous = purple.palette.analogous.first; // choose any of the two color schemes
-let triadic = purple.palette.triadic.second;    // choose any of the two color schemes
-
+let analogous = purple.palette.analogous.primary; // choose any of the two color schemes
+let triadic = purple.palette.triadic.secondary;    // choose any of the two color schemes
+*/
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: primary.500,
-      light: primary.200,
-      dark: primary.700,
+      main: purple.500,
+      light: purple.200,
+      dark: purple.700,
     },
     secondary: {
-      main: secondary.500,
-      light: secondary.200,
-      dark: secondary.700,
+      main: purple.C500,
+      light: purple.C200,
+      dark: purple.C700,
     },
   },
 });
@@ -179,8 +196,9 @@ This code will log the Matercolor Palette Objects for every dominant color extra
 ### 🛣️ Roadmap
 
  - [x] Generate Primary Palette for any given color 
- - [x] Generate Accents for Palette 
- - [x] Get Contrast Colors for Foreground Text
+ - [x] ~~Generate Shades for Palette~~
+ - [x] ~~Generate Accents for Palette~~ 
+ - [x] Automatically selects Black or White as Contrast Text
  - [x] Generate Complementary Palette 
  - [x] Generate Analogous Palette
  - [x] Generate Triadic Palette
@@ -189,7 +207,7 @@ This code will log the Matercolor Palette Objects for every dominant color extra
  - [ ] Update Demo Project to demonstrate Usage
  
 ### 👐 Contributing 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. Please make sure to create or update tests as appropriate.
+Pull requests are welcome. For major changes, please open an issue primary to discuss what you would like to change. Please make sure to create or update tests as appropriate.
 
 ### 🙏 Acknowledgements
 * [edelstone/**material-palette-generator**](https://github.com/edelstone/material-palette-generator)

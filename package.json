@@ -1,6 +1,6 @@
 {
   "name": "matercolors",
-  "version": "2.0.0",
+  "version": "2.2.10",
   "description": "A tiny, zero-dependency libary for building harmonious material palettes for any color.",
   "main": "dist/index.js",
   "umd:main": "dist/index.umd.js",
