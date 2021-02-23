@@ -9,3 +9,6 @@ node_modules
 # npm package lock
 package-lock.json
 yarn.lock
+
+#npm pack files
+*.tgz
