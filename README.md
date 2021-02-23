@@ -202,6 +202,7 @@ This code will log the Matercolor Palette Objects for every dominant color extra
  - [x] Generate Complementary Palette 
  - [x] Generate Analogous Palette
  - [x] Generate Triadic Palette
+ - [x] Add Direct Dot Access to Constructor
  - [ ] Generate Tetradic Palette
  - [ ] Generate Split Complementary Palette
  - [ ] Update Demo Project to demonstrate Usage
