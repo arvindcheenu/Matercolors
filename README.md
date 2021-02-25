@@ -71,7 +71,7 @@ Matercolor {
   this[ckey] = [String]
   // ...where ckey is given by concatenating root keys with palette prefix.
   color: '#6200EE',
-  options: { threshold: 128, showContrastText: false },
+  options: { threshold: 128 },
   palette: [Function] }
 ```
 
@@ -79,7 +79,7 @@ As you can see here, ckey is given by concatenating root keys (`100` to `900`) w
 
 | Palette Name | Prefix |
 |-|-|
-| primary | `` |
+| primary | `P` |
 | complementary | `C` |
 | analogous primary | `A` |
 | analogous secondary | `A1` |
@@ -92,44 +92,13 @@ As you can see from the constructor, currently **Matercolor** offers **2** optio
 | Options | Type | Default | What it does |
 |-|-|-|-|
 | `threshold` |`Number`| `128` | Sets the **Contrast threshold** for the foreground text |
-| `showContrastText` |`Boolean`| `false` | Shows contrast text colour for each color in the palette |
 
 Apart from these options, the new Matercolor exposes a single function to generate specific palettes.
 
-#### makePalette(paletteName : `String`, updateRoot: `Boolean`) returns `Object`
+#### makePalette(paletteName : `String`) returns `Object`
 where `paletteName` can be any one of the following case-sensitive strings: **`primary`**, **`complementary`**, **`analogous`**, **`firstAnalogous`**, **`secondAnalogous`**, **`triadic`**, **`firstTriadic`**, **`secondTriadic`**.
 
-#### 🏗️ Palette Object Structure
-We can the palette output for the `Purple` color by
-```
-Purple.palette
-```
-we get an output that follows the following structure.
-
-```js
-{
-  primary : { // type of palette
-    // varies depending on whether 
-    50 : [String|{hex : String, contrastText: 'white'|'black'}],
-    100 : [String|Object],
-    200 : [String|Object],
-    ...
-    900 : [String|Object], // darkest color in palette
-  },
-  // similarly we have for other derived palettes
-  complementary : { ... },
-  analogous : {
-    primary: { ... },
-    secondary: { ... },
-  },
-  triadic : {
-    primary: { ... },
-    secondary: { ... },
-  }
-}
-```
-
-These outputs can also be used in conjunction with [Material UI's](https://material-ui.com/) 
+The outputs can also be used in conjunction with [Material UI's](https://material-ui.com/) 
 [**createMuiTheme**](https://material-ui.com/customization/theming/#createmuitheme-options-args-theme) to configure custom palettes.
 
 ### Usage with `createMuiTheme` 
@@ -140,20 +109,12 @@ import Matercolor from 'matercolors';
 import { createMuiTheme } from '@material-ui/core/styles';
 
 let purple = new Matercolor('#6200EE');
-/*
-You can still use this though you may not need to now:
-let primary = purple.palette.primary;
-let secondary = purple.palette.complementary; // complementary palette generated for you!
-// similarly use any derived palettes
-let analogous = purple.palette.analogous.primary; // choose any of the two color schemes
-let triadic = purple.palette.triadic.secondary;    // choose any of the two color schemes
-*/
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: purple.500,
-      light: purple.200,
-      dark: purple.700,
+      main: purple.P500,
+      light: purple.P200,
+      dark: purple.P700,
     },
     secondary: {
       main: purple.C500,

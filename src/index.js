@@ -1,68 +1,100 @@
-import {keys, defaultOptions} from './global.constants.js';
+import {keys} from './global.constants.js';
 import {
   normalizeRGB,
   rgbToHex,
-  hexToRgba,
-  getContrastText,
+  hexToRgb,
   rotateColorBy,
+  mostReadable,
 } from './color.utils.js';
 import {createPallete} from './goldenPalettes.js';
 export default class Matercolor {
-  constructor (color, options) {
-    this.palette = {};
-    this.color = color;
-    this.options = options
-      ? Object.assign (defaultOptions, options)
-      : defaultOptions;
-    this.complementary = () => rotateColorBy (this.color, 180);
-    this.firstAnalogous = () => rotateColorBy (this.color, -30);
-    this.secondAnalogous = () => rotateColorBy (this.color, 30);
-    this.firstTriadic = () => rotateColorBy (this.color, 60);
-    this.secondTriadic = () => rotateColorBy (this.color, 120);
-    this.palette.primary = this.makePalette ('primary', true);
-    this.palette.complementary = this.makePalette ('complementary', true);
-    this.palette.analogous = {};
-    this.palette.analogous.primary = this.makePalette ('firstAnalogous', true);
-    this.palette.analogous.secondary = this.makePalette (
-      'secondAnalogous',
-      true
-    );
-    this.palette.triadic = {};
-    this.palette.triadic.primary = this.makePalette ('firstTriadic', true);
-    this.palette.triadic.secondary = this.makePalette ('secondTriadic', true);
+  constructor (color) {
+    this._init = color;
+    this._color = color;
+    this._level = 'AA';
+    this._size = 'small';
+    this._greedy = false;
+    this.is = () => {
+      return this._color;
+    };
+    this.palette = paletteName => {
+      return this._scheme (paletteName);
+    };
+    this.greedy = () => {
+      this._greedy = true;
+      return this;
+    };
+    this.AAA = () => {
+      this._level = 'AAA';
+      return this;
+    };
+    this.AA = () => {
+      this._level = 'AA';
+      return this;
+    };
+    this.small = () => {
+      this._size = 'small';
+      return this;
+    };
+    this.large = () => {
+      this._size = 'large';
+      return this;
+    };
+    this.contrastColor = (color = null) => {
+      let baseColor = this._color;
+      let colorList;
+      if (color === null) {
+        colorList = [];
+      } else if (color.includes ('self')) {
+        colorList = Object.values (this.palette ('p'));
+      } else if (/^#([A-Fa-f0-9]{6})$/gim.test (color)) {
+        colorList = Object.values (new Matercolor (color).palette ('p'));
+      }
+      let args = {level: this._level, size: this._size};
+      return mostReadable (baseColor, colorList, this._greedy, args);
+    };
+    this.root = () => {
+      this._init = this._color;
+      this._scheme ('primary', true);
+      this._scheme ('complementary', true);
+      this._scheme ('analogous', true);
+      this._scheme ('triadic', true);
+      return this;
+    };
+    this._scheme ('primary', true);
+    this._scheme ('complementary', true);
+    this._scheme ('analogous', true);
+    this._scheme ('triadic', true);
   }
-
-  makePalette (paletteName, updateRoot = false) {
+  _scheme (paletteName, regenerate = false) {
     const localObject = {};
     let Color;
-    let Prefix;
-    if (paletteName === 'primary') {
-      Prefix = '';
-      Color = hexToRgba (this.color);
-    } else if (paletteName === 'complementary') {
-      Prefix = 'C';
-      Color = hexToRgba (this.complementary ());
+    let Prefix = paletteName[0].toUpperCase ();
+    if (Prefix === 'P') {
+      Color = hexToRgb (this._init);
+    } else if (Prefix === 'C') {
+      Color = hexToRgb (rotateColorBy (this._init, 180));
     } else if (paletteName === 'firstAnalogous') {
       Prefix = 'A';
-      Color = hexToRgba (this.firstAnalogous ());
+      Color = hexToRgb (rotateColorBy (this._init, -30));
     } else if (paletteName === 'secondAnalogous') {
       Prefix = 'A1';
-      Color = hexToRgba (this.secondAnalogous ());
-    } else if (paletteName === 'analogous') {
+      Color = hexToRgb (rotateColorBy (this._init, 30));
+    } else if (Prefix === 'A') {
       const analogousObject = {};
-      analogousObject.primary = this.makePalette ('firstAnalogous', true);
-      analogousObject.secondary = this.makePalette ('secondAnalogous', true);
+      analogousObject.primary = this._scheme ('firstAnalogous', regenerate);
+      analogousObject.secondary = this._scheme ('secondAnalogous', regenerate);
       return analogousObject;
     } else if (paletteName === 'firstTriadic') {
       Prefix = 'T';
-      Color = hexToRgba (this.firstTriadic ());
+      Color = hexToRgb (rotateColorBy (this._init, 60));
     } else if (paletteName === 'secondTriadic') {
       Prefix = 'T1';
-      Color = hexToRgba (this.secondTriadic ());
-    } else if (paletteName === 'triadic') {
+      Color = hexToRgb (rotateColorBy (this._init, 120));
+    } else if (Prefix === 'T') {
       const triadicObject = {};
-      triadicObject.primary = this.makePalette ('firstTriadic', true);
-      triadicObject.secondary = this.makePalette ('secondTriadic', true);
+      triadicObject.primary = this._scheme ('firstTriadic', regenerate);
+      triadicObject.secondary = this._scheme ('secondTriadic', regenerate);
       return triadicObject;
     }
     const newPalette = createPallete (normalizeRGB (Color)).map (u =>
@@ -73,23 +105,25 @@ export default class Matercolor {
       )
     );
     for (let i = 0; i < keys.length; i += 1) {
-      const ckey = Prefix + keys[i];
       let colorObject = {};
-      if (this.options.showContrastText) {
-        const rgb = hexToRgba (newPalette[i]);
-        const contrastText = getContrastText (rgb, this.options.threshold);
-        if (updateRoot === true) {
-          this[ckey] = {};
-          this[ckey].hex = newPalette[i];
-          this[ckey].contrastText = contrastText;
+      if (regenerate === true) {
+        const ckey = Prefix + keys[i];
+        if (Prefix === 'P') {
+          this[keys[i]] = newPalette[i];
         }
-        colorObject.hex = newPalette[i];
-        colorObject.contrastText = contrastText;
+        Object.defineProperty (this, ckey.toString (), {
+          value: newPalette[i],
+          configurable: true,
+          writable: true,
+        });
+        this[ckey.toString ().toLowerCase ()] = function () {
+          this._color = newPalette[i];
+          return this;
+        };
       } else {
-        if (updateRoot === true) this[ckey] = newPalette[i];
         colorObject = newPalette[i];
+        localObject[keys[i]] = colorObject;
       }
-      localObject[keys[i]] = colorObject;
     }
     return localObject;
   }
