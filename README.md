@@ -15,6 +15,7 @@
   A tiny, <b>zero-dependency</b> libary for building harmonious material palettes for <b>any color</b>.
 </p>
 <p align="center">
+ <a href="https://www.figma.com/community/plugin/872008431843787391"><img src="https://github.com/arvindcheenu/figma-matercolor/blob/master/src/app/assets/install-on-figma-button.png?raw=true" height="50px"></a><br/>
 <a href="https://github.com/arvindcheenu">Created with ❤️ by <b>Arvind Srinivasan.</b></a>
  <br><br>
 </p>
