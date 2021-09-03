@@ -27,7 +27,7 @@
 > 
 > Removed the residual options that were missed in the latest major version.
 >
-> Most importantly,direct dot access functionality has been added to the constructor so that one can **quickly access the colors they need across palettes**.
+> Most importantly, **direct object access** has been added to the constructor so that one can **quickly access the colors they need across palettes**.
 
 > **✨ New in v.2.0 : Lose some features, Gain even more!** 
 >
