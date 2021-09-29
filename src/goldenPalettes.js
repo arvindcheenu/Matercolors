@@ -10,7 +10,109 @@ import {
   reverseTransformer,
   getHueDegrees
 } from './goldenPalettes.utils.js'
+import {
+  hexToRgba,
+  normalizeRGB,
+} from './color.utils.js'
 // Local Constants
+const KdA = [
+  [
+    new ConvertToLAB(normalizeRGB(hexToRgba('#FF8A80'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#FF5252'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#FF1744'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#D50000')))
+  ],
+  [
+    new ConvertToLAB(normalizeRGB(hexToRgba('#FF80AB'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#FF4081'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#F50057'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#C51162')))
+  ],
+  [
+    new ConvertToLAB(normalizeRGB(hexToRgba('#EA80FC'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#E040FB'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#D500F9'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#AA00FF')))
+  ],
+  [
+    new ConvertToLAB(normalizeRGB(hexToRgba('#B388FF'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#7C4DFF'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#651FFF'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#6200EA')))
+  ],
+  [
+    new ConvertToLAB(normalizeRGB(hexToRgba('#8C9EFF'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#536DFE'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#3D5AFE'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#304FFE')))
+  ],
+  [
+    new ConvertToLAB(normalizeRGB(hexToRgba('#82B1FF'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#448AFF'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#2979FF'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#2962FF')))
+  ],
+  [
+    new ConvertToLAB(normalizeRGB(hexToRgba('#80D8FF'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#40C4FF'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#00B0FF'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#0091EA')))
+  ],
+  [
+    new ConvertToLAB(normalizeRGB(hexToRgba('#84FFFF'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#18FFFF'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#00E5FF'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#00B8D4')))
+  ],
+  [
+    new ConvertToLAB(normalizeRGB(hexToRgba('#A7FFEB'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#64FFDA'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#1DE9B6'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#00BFA5')))
+  ],
+  [
+    new ConvertToLAB(normalizeRGB(hexToRgba('#B9F6CA'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#69F0AE'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#00E676'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#00C853')))
+  ],
+  [
+    new ConvertToLAB(normalizeRGB(hexToRgba('#CCFF90'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#B2FF59'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#76FF03'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#64DD17')))
+  ],
+  [
+    new ConvertToLAB(normalizeRGB(hexToRgba('#F4FF81'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#EEFF41'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#C6FF00'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#AEEA00')))
+  ],
+  [
+    new ConvertToLAB(normalizeRGB(hexToRgba('#FFFF8D'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#FFFF00'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#FFEA00'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#FFD600')))
+  ],
+  [
+    new ConvertToLAB(normalizeRGB(hexToRgba('#FFE57F'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#FFD740'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#FFC400'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#FFAB00')))
+  ],
+  [
+    new ConvertToLAB(normalizeRGB(hexToRgba('#FFD180'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#FFAB40'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#FF9100'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#FF6D00')))
+  ],
+  [
+    new ConvertToLAB(normalizeRGB(hexToRgba('#FF9E80'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#FF6E40'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#FF3D00'))),
+    new ConvertToLAB(normalizeRGB(hexToRgba('#DD2C00')))
+  ]
+]
 const Kd = [
   [
     new ValidateBounds(
@@ -998,8 +1100,9 @@ export const Md = [
   19.88410864
 ]
 // Local Functions
-function paletteGenerator (a, B) {
-  const b = B === undefined ? Kd : B
+function paletteGenerator (a, B, accent) {
+  const refPalletes = accent ? KdA : Kd
+  const b = B === undefined ? refPalletes : B
   let d = b[0]
   let e = -1
   if (!b.length || !b[0].length) throw Error('Invalid golden palettes')
@@ -1071,8 +1174,7 @@ function paletteGenerator (a, B) {
     ed: e
   }
 }
-// Exported Functions
-export function createPallete (a) {
+export function buildPalette (a) {
   let b
   b = b === undefined ? Kd : b
   const c = ConvertToLAB(a)
@@ -1083,6 +1185,68 @@ export function createPallete (a) {
   const l = computeLABterms(e)
   const h = computeLABterms(c)
   const g = computeLABterms(b[5]).T < 30
+  const f = l.g - h.g
+  const m = l.T - h.T
+  const n = l.hue - h.hue
+  const u = Ld[d]
+  const q = Md[d]
+  let p = 100
+  return b.map((R, T) => {
+    let r = R
+    let t = T
+    // eslint-disable-next-line
+    if (r === e) return (p = Math.max (h.g - 1.7, 0)), a;
+    r = computeLABterms(r)
+    let v = r.g - Ld[t] / u * f
+    v = Math.min(v, p)
+    t = new ConstrainHCLA(
+      minOfMax(v, 0, 100),
+      Math.max(0, g ? r.T - m : r.T - m * Math.min(Md[t] / q, 1.25)),
+      (r.hue - n + 360) % 360
+    )
+    p = Math.max(t.g - 1.7, 0)
+    r = t.hue * Math.PI / 180
+    t = new ValidateBounds(
+      t.g,
+      t.T * Math.cos(r),
+      t.T * Math.sin(r),
+      t.alpha
+    )
+    let z = (t.g + 16) / 116
+    r = 0.95047 * reverseTransformer(z + t.A / 500)
+    v = 1 * reverseTransformer(z)
+    z = 1.08883 * reverseTransformer(z - t.B / 200)
+    return new ConstrainRGBA(
+      minOfMax(
+        linear2sRGB(3.2404542 * r + -1.5371385 * v + -0.4985314 * z),
+        0,
+        1
+      ),
+      minOfMax(
+        linear2sRGB(-0.969266 * r + 1.8760108 * v + 0.041556 * z),
+        0,
+        1
+      ),
+      minOfMax(
+        linear2sRGB(0.0556434 * r + -0.2040259 * v + 1.0572252 * z),
+        0,
+        1
+      ),
+      t.alpha
+    )
+  })
+}
+export function buildAccent (a) {
+  let b
+  b = b === undefined ? KdA : b
+  const c = ConvertToLAB(a)
+  let d = paletteGenerator(c, b)
+  b = d.fd
+  d = d.ed
+  const e = b[d]
+  const l = computeLABterms(e)
+  const h = computeLABterms(c)
+  const g = computeLABterms(b[2]).T < 30
   const f = l.g - h.g
   const m = l.T - h.T
   const n = l.hue - h.hue

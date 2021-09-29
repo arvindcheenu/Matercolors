@@ -21,6 +21,10 @@
 </p>
 <br>
 
+> **✨ New in v.2.3.0 : Better Accent Generation, renamed keys** 
+>
+> `accents` are reintroduced with better color generation. Renamed shortcodes to make room for `accent` keys. 
+
 > **✨ New in v.2.2.10 : Skyrocketing Productivity!** 
 > 
 > Updated version to match Semantic Versioning Standards.
@@ -36,7 +40,6 @@
 > As color conversions can be done by other libraries, these helpers were removed to make API more expressive.
 >
 > **While the package size reduced by 5%, productivity increased by 50%**.  
-> 
 
 ## 🎉 Installation
 
@@ -76,16 +79,16 @@ Matercolor {
   palette: [Function] }
 ```
 
-As you can see here, ckey is given by concatenating root keys (`100` to `900`) with palette prefix. The palette name and the corresponding prefix is given in the following table:
+As you can see here, ckey is given by concatenating root keys (`100` to `900` and `A100`,`A200`,`A400`,`A700`) with palette prefix. The palette name and the corresponding prefix is given in the following table:
 
 | Palette Name | Prefix |
 |-|-|
 | primary | `` |
 | complementary | `C` |
-| analogous primary | `A` |
-| analogous secondary | `A1` |
-| triadic primary | `T` |
-| triadic secondary | `T1` |
+| analogous primary | `A1` |
+| analogous secondary | `A2` |
+| triadic primary | `T1` |
+| triadic secondary | `T2` |
 
 ### 🔧 Options and Methods
 As you can see from the constructor, currently **Matercolor** offers **2** options for configuration.
