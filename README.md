@@ -115,10 +115,14 @@ we get an output that follows the following structure.
   primary : { // type of palette
     // varies depending on whether 
     50 : [String|{hex : String, contrastText: 'white'|'black'}],
-    100 : [String|Object],
-    200 : [String|Object],
+    100 : [String],
+    200 : [String],
     ...
-    900 : [String|Object], // darkest color in palette
+    900 : [String], // darkest color in palette
+    A100 : [String],  
+    A200 : [String],
+    A400 : [String],
+    A700 : [String],
   },
   // similarly we have for other derived palettes
   complementary : { ... },
