@@ -19,6 +19,9 @@ export default class Matercolor {
     this.secondAnalogous = () => rotateColorBy(this.color, 30)
     this.firstTriadic = () => rotateColorBy(this.color, 60)
     this.secondTriadic = () => rotateColorBy(this.color, 120)
+    this.firstTetradic = () => rotateColorBy(this.color, 30)
+    this.secondTetradic = () => rotateColorBy(this.color, 180)
+    this.thirdTetradic = () => rotateColorBy(this.color, -120)
     this.palette.primary = this.makePalette('primary', true)
     this.palette.complementary = this.makePalette('complementary', true)
     this.palette.analogous = {}
@@ -30,6 +33,10 @@ export default class Matercolor {
     this.palette.triadic = {}
     this.palette.triadic.primary = this.makePalette('firstTriadic', true)
     this.palette.triadic.secondary = this.makePalette('secondTriadic', true)
+    this.palette.tetradic = {}
+    this.palette.tetradic.primary = this.makePalette('firstTetradic', true)
+    this.palette.tetradic.secondary = this.makePalette('secondTetradic', true)
+    this.palette.tetradic.tertiary = this.makePalette('thirdTetradic', true)
   }
 
   makePalette (paletteName, updateRoot = false) {
@@ -64,6 +71,21 @@ export default class Matercolor {
       triadicObject.primary = this.makePalette('firstTriadic', true)
       triadicObject.secondary = this.makePalette('secondTriadic', true)
       return triadicObject
+    } else if (paletteName === 'firstTetradic') {
+      Prefix = 'Q1'
+      Color = hexToRgba(this.firstTetradic())
+    } else if (paletteName === 'secondTetradic') {
+      Prefix = 'Q2'
+      Color = hexToRgba(this.secondTetradic())
+    } else if (paletteName === 'thirdTetradic') {
+      Prefix = 'Q3'
+      Color = hexToRgba(this.thirdTetradic())
+    }  else if (paletteName === 'triadic') {
+      const tetradicObject = {}
+      tetradicObject.primary = this.makePalette('firstTetradic', true)
+      tetradicObject.secondary = this.makePalette('secondTetradic', true)
+      tetradicObject.tertiary = this.makePalette('thirdTetradic', true)
+      return tetradicObject
     }
     const newPalette = buildPalette(normalizeRGB(Color)).map(u =>
       rgbToHex(
