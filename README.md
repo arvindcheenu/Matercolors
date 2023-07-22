@@ -89,6 +89,9 @@ As you can see here, ckey is given by concatenating root keys (`100` to `900` an
 | analogous secondary | `A2` |
 | triadic primary | `T1` |
 | triadic secondary | `T2` |
+| tetradic primary | `Q1` |
+| tetradic secondary | `Q2` |
+| tetradic tertiary | `Q3` |
 
 ### 🔧 Options and Methods
 As you can see from the constructor, currently **Matercolor** offers **2** options for configuration.
@@ -133,7 +136,12 @@ we get an output that follows the following structure.
   triadic : {
     primary: { ... },
     secondary: { ... },
-  }
+  },
+  tetradic : {
+    primary: { ... },
+    secondary: { ... },
+    tertiary: { ... },
+  },
 }
 ```
 
@@ -211,7 +219,7 @@ This code will log the Matercolor Palette Objects for every dominant color extra
  - [x] Generate Analogous Palette
  - [x] Generate Triadic Palette
  - [x] Add Direct Dot Access to Constructor
- - [ ] Generate Tetradic Palette
+ - [x] Generate Tetradic Palette
  - [ ] Generate Split Complementary Palette
  - [ ] Update Demo Project to demonstrate Usage
  
